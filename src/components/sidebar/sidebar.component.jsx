@@ -26,7 +26,7 @@ class Sidebar extends React.Component {
           <Hamburger icon={this.props.sidebarOpen ? "arrow-left" : "menu"} />
         </HamburgerWrap>
 
-        {/* <NavItem>
+        <NavItem>
           <NavLabel>About Me</NavLabel>
           <NavIcon>
             <Icon name="person" />
@@ -49,7 +49,7 @@ class Sidebar extends React.Component {
           <NavIcon>
             <Icon name="mail" />
           </NavIcon>
-        </NavItem> */}
+        </NavItem>
       </Wrapper>
     );
   }

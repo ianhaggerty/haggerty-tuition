@@ -1,64 +1,40 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.nav`
-  height: 100%;
+  height: ${props => props.theme.appHeight};
+  max-height: 100vh;
   width: ${props =>
     props.sidebarOpen
       ? props.theme.sidebarWidthOpen
       : props.theme.sidebarWidthClosed};
-  grid-column: sidebar-col-start / sidebar-col-end;
 
+  box-shadow: ${props => props.theme.shadowLong};
   background-color: ${props => props.theme.colorGreyDark};
   transition: ${props => props.theme.sidebarTransition};
 
-  display: grid;
-  grid-template-columns:
-    [label-col-start]
-    1fr
-    [label-col-end icon-col-start]
-    ${props =>
-      props.sidebarOpen
-        ? props.theme.sidebarWidthOpen
-        : props.theme.sidebarWidthClosed}
-    [icon-col-end];
-  grid-template-rows:
-    [menu-row-start]
-    ${props => props.theme.sidebarWidthClosed}
-    [menu-row-end spacing-row-start]
-    1fr
-    [spacing-row-end nav-item-start-1]
-    ${props => props.theme.navItemHeight}
-    [nav-item-end-1 nav-item-start-2]
-    ${props => props.theme.navItemHeight}
-    [nav-item-end-2 nav-item-start-3]
-    ${props => props.theme.navItemHeight}
-    [nav-item-end-3 nav-item-start-4]
-    ${props => props.theme.navItemHeight}
-    [nav-item-end-4 margin-bottom-start]
-    ${props => props.theme.iconWidth}
-    [margin-bottom-end];
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 
-  justify-content: end;
-
-  align-items: center;
-  justify-items: center;
-
+  z-index: 1000;
   overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 `;
 
 export const HamburgerWrap = styled.div`
   text-align: right;
   width: 100%;
   cursor: pointer;
+  margin-bottom: auto;
 
   transition: 0.5s ease;
 
   &:hover {
     background-color: ${props => props.theme.colorGreyMedium};
   }
-
-  grid-row: menu-row-start / menu-row-end;
-  grid-column: icon-col-start / icon-col-end;
 `;
 
 export const NavItem = styled.div`

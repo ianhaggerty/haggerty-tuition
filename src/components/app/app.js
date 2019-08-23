@@ -11,6 +11,7 @@ import AboutMe from "../../sections/about-me/about-me.component";
 import Enquire from "../../sections/enquire/enquire.component";
 import MyBackground from "../../sections/background/background.component";
 
+import Overlay from "../overlay/overlay.component";
 import Sidebar from "../sidebar/sidebar.component";
 import Navigator from "../navigator/navigator.component";
 import Background from "../background/background.component";
@@ -21,14 +22,18 @@ const App = props => {
   return (
     <React.Fragment>
       <Background />
+
       <Wrap {...props}>
-        <Sidebar />
         <MainLayout>
           <LogoType />
           <AboutMe />
           <Navigator />
         </MainLayout>
       </Wrap>
+
+      <Overlay />
+
+      <Sidebar />
     </React.Fragment>
   );
 };
