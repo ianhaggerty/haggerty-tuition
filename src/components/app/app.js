@@ -6,26 +6,30 @@ import { selectSidebarOpen } from "../../redux/sidebar/sidebar.selectors";
 
 import { Wrap } from "./app.styles";
 
-import LogoType from "../logo-type/logo-type.component";
+import LogoType from "../../sections/logo-type/logo-type.component";
 import AboutMe from "../../sections/about-me/about-me.component";
 import Enquire from "../../sections/enquire/enquire.component";
-import Background from "../../sections/background/background.component";
+import MyBackground from "../../sections/background/background.component";
 
 import Sidebar from "../sidebar/sidebar.component";
+import Navigator from "../navigator/navigator.component";
+import Background from "../background/background.component";
 
 import MainLayout from "../../layout/main/main.component";
 
 const App = props => {
   return (
-    <Wrap {...props}>
-      <Sidebar />
-      <MainLayout>
-        <LogoType />
-        <AboutMe />
-        <Enquire />
-        <Background />
-      </MainLayout>
-    </Wrap>
+    <React.Fragment>
+      <Background />
+      <Wrap {...props}>
+        <Sidebar />
+        <MainLayout>
+          <LogoType />
+          <AboutMe />
+          <Navigator />
+        </MainLayout>
+      </Wrap>
+    </React.Fragment>
   );
 };
 

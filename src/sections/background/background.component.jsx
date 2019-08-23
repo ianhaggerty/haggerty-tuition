@@ -2,13 +2,9 @@ import React from "react";
 
 import { Article, Heading, Paragraph } from "../../components/article";
 
-import withGrid from "../../components/with-grid/with-grid.component";
-
-const FirstArticle = withGrid(Article)("right", "background");
-
 const Background = () => (
   <React.Fragment>
-    <FirstArticle>
+    <Article style={{ gridCol: "1 / 2;" }}>
       <Heading>My Background</Heading>
       <Paragraph>I’m a local here in Plymouth.</Paragraph>
       <Paragraph>
@@ -24,7 +20,7 @@ const Background = () => (
         I went on to study A-level Mathematics Further Mathematics; Physics and
         Chemistry.
       </Paragraph>
-    </FirstArticle>
+    </Article>
   </React.Fragment>
 );
 

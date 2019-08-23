@@ -7,7 +7,7 @@ import Icon from "../../components/icon/icon.component";
 import { Wrap } from "./enquire.styles";
 
 const Enquire = props => (
-  <Wrap>
+  <Wrap {...props}>
     <Button backgroundColor="primary" className="u-margin-right-small">
       <Icon name="mail" />
       <span>Enquire Now</span>

@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const LogoBox = styled.header`
   text-align: center;
   margin-top: 4rem;
-  grid-column: 1 / -1;
   transform-origin: top;
   transform: scale(1.08);
 `;

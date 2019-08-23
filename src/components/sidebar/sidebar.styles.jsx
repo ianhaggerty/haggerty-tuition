@@ -4,15 +4,11 @@ import { parser } from "css-math";
 export const Wrapper = styled.nav`
   background-color: ${props => props.theme.colorGreyDark};
 
-  position: fixed;
-  height: 100vh;
+  height: 92.8rem;
   width: ${props =>
     props.sidebarOpen
       ? props.theme.sidebarWidthOpen
       : props.theme.sidebarWidthClosed};
-  left: 0;
-  top: 0;
-
   transition: ${props => props.theme.sidebarTransition};
 
   display: flex;
@@ -44,7 +40,6 @@ export const NavItem = styled.div`
 
   cursor: pointer;
 
-  /* padding: 1rem 0; */
   height: ${props => props.theme.navItemHeight};
 
   display: flex;
@@ -85,12 +80,14 @@ export const NavLabel = styled.div`
 
 export const NavIcon = styled.div`
   padding: 0
-    ${props =>
-      parser(
-        `(${props.theme.sidebarWidthClosed} - ${props.theme.iconWidth}) / 2`
-      )};
+    calc(
+      (
+          ${props => props.theme.sidebarWidthClosed} -
+            ${props => props.theme.iconWidth}
+        ) / 2
+    );
 
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 `;

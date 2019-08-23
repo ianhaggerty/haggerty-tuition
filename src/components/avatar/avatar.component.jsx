@@ -7,8 +7,8 @@ import { AvatarCircle } from "./avatar.styles";
 
 const Avatar = props => (
   <AvatarCircle {...props}>
-    <img src={selfyBW} alt="Avatar" />
     <img src={selfy} alt="Avatar" />
+    <img src={selfyBW} alt="Avatar" />
   </AvatarCircle>
 );
 

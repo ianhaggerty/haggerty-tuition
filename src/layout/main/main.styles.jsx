@@ -1,39 +1,32 @@
 import styled from "styled-components";
 import { parser } from "css-math";
 
+export const gridColWidth = "33rem";
+
 export const Grid = styled.main`
   width: 100%;
+  height: 100%;
   display: grid;
 
   grid-template-columns:
-    [col-left-start]
+    [page-left-start]
+    1fr
+    [page-left-end col-left-start]
     ${props => props.theme.gridColWidth}
     [col-left-end col-right-start]
     ${props => props.theme.gridColWidth}
-    [col-right-end];
-
+    [col-right-end page-right-start]
+    1fr
+    [page-right-end];
+  grid-template-rows: auto auto;
   grid-template-rows:
     [header-start]
-    ${props => props.theme.headerHeight}
+    25rem
     [header-end about-me-start]
-    /* Viewport - header - twice icon width */
-    minmax(
-      calc(
-        100vh - ${props => props.theme.headerHeight} -
-          ${props => props.theme.iconWidth} -
-          ${props => props.theme.navItemHeight}
-      ),
-      auto
-    )
-    [about-me-end enquire-1-start]
-    /* Twice icon width + 2 * NavItem Padding */
-    calc(
-      ${props => props.theme.iconWidth} + ${props => props.theme.navItemHeight}
-    )
-    [enquire-1-end background-start]
     auto
-    [background-end];
+    [about-me-end]
+    auto;
 
-  grid-column-gap: 8.8rem;
+  grid-column-gap: ${props => props.theme.gridColGap};
   justify-content: center;
 `;
