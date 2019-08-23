@@ -6,6 +6,7 @@ export const Wrap = styled.div`
   height: ${props => props.theme.sidebarWidthClosed};
   position: relative;
   cursor: pointer;
+  display: inline-block;
 `;
 
 const lineLength = "4rem";

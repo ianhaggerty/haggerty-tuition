@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -7,7 +8,7 @@ import { toggleSidebar } from "../../redux/sidebar/sidebar.actions";
 
 import {
   Wrapper,
-  HamburgerWrapper,
+  HamburgerWrap,
   NavItem,
   NavLabel,
   NavIcon
@@ -21,14 +22,11 @@ class Sidebar extends React.Component {
     const { sidebarOpen } = this.props;
     return (
       <Wrapper sidebarOpen={sidebarOpen}>
-        <HamburgerWrapper onClick={this.props.toggleSidebar}>
-          <Hamburger
-            icon={this.props.sidebarOpen ? "arrow-left" : "menu"}
-            style={{ marginBottom: "auto" }}
-          />
-        </HamburgerWrapper>
+        <HamburgerWrap onClick={this.props.toggleSidebar}>
+          <Hamburger icon={this.props.sidebarOpen ? "arrow-left" : "menu"} />
+        </HamburgerWrap>
 
-        <NavItem>
+        {/* <NavItem>
           <NavLabel>About Me</NavLabel>
           <NavIcon>
             <Icon name="person" />
@@ -51,7 +49,7 @@ class Sidebar extends React.Component {
           <NavIcon>
             <Icon name="mail" />
           </NavIcon>
-        </NavItem>
+        </NavItem> */}
       </Wrapper>
     );
   }

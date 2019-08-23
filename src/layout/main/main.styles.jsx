@@ -4,8 +4,9 @@ import { parser } from "css-math";
 export const gridColWidth = "33rem";
 
 export const Grid = styled.main`
-  width: 100%;
   height: 100%;
+  grid-column: main-col-start / main-col-end;
+
   display: grid;
 
   grid-template-columns:
@@ -24,8 +25,9 @@ export const Grid = styled.main`
     25rem
     [header-end about-me-start]
     auto
-    [about-me-end]
-    auto;
+    [about-me-end navigator-start]
+    auto
+    [navigator-end];
 
   grid-column-gap: ${props => props.theme.gridColGap};
   justify-content: center;

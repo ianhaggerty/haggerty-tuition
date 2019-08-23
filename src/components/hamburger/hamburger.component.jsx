@@ -14,7 +14,7 @@ const Hamburger = ({ icon, ...props }) => {
 };
 
 Hamburger.propTypes = {
-  icon: PropTypes.oneOf(["menu", "close"])
+  icon: PropTypes.oneOf(["menu", "close", "arrow-left"])
 };
 
 export default Hamburger;

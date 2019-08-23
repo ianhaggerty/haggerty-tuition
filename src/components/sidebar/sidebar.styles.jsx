@@ -1,36 +1,64 @@
 import styled from "styled-components";
-import { parser } from "css-math";
 
 export const Wrapper = styled.nav`
-  background-color: ${props => props.theme.colorGreyDark};
-
-  height: 92.8rem;
+  height: 100%;
   width: ${props =>
     props.sidebarOpen
       ? props.theme.sidebarWidthOpen
       : props.theme.sidebarWidthClosed};
+  grid-column: sidebar-col-start / sidebar-col-end;
+
+  background-color: ${props => props.theme.colorGreyDark};
   transition: ${props => props.theme.sidebarTransition};
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  display: grid;
+  grid-template-columns:
+    [label-col-start]
+    1fr
+    [label-col-end icon-col-start]
+    ${props =>
+      props.sidebarOpen
+        ? props.theme.sidebarWidthOpen
+        : props.theme.sidebarWidthClosed}
+    [icon-col-end];
+  grid-template-rows:
+    [menu-row-start]
+    ${props => props.theme.sidebarWidthClosed}
+    [menu-row-end spacing-row-start]
+    1fr
+    [spacing-row-end nav-item-start-1]
+    ${props => props.theme.navItemHeight}
+    [nav-item-end-1 nav-item-start-2]
+    ${props => props.theme.navItemHeight}
+    [nav-item-end-2 nav-item-start-3]
+    ${props => props.theme.navItemHeight}
+    [nav-item-end-3 nav-item-start-4]
+    ${props => props.theme.navItemHeight}
+    [nav-item-end-4 margin-bottom-start]
+    ${props => props.theme.iconWidth}
+    [margin-bottom-end];
+
+  justify-content: end;
+
+  align-items: center;
+  justify-items: center;
 
   overflow: hidden;
 `;
 
-export const HamburgerWrapper = styled.div`
-  margin-bottom: auto;
+export const HamburgerWrap = styled.div`
+  text-align: right;
   width: 100%;
   cursor: pointer;
-
-  display: flex;
-  justify-content: flex-end;
 
   transition: 0.5s ease;
 
   &:hover {
     background-color: ${props => props.theme.colorGreyMedium};
   }
+
+  grid-row: menu-row-start / menu-row-end;
+  grid-column: icon-col-start / icon-col-end;
 `;
 
 export const NavItem = styled.div`

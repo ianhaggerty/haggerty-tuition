@@ -2897,11 +2897,6 @@ css-loader@2.1.1:
     postcss-value-parser "^3.3.0"
     schema-utils "^1.0.0"
 
-css-math@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/css-math/-/css-math-0.4.0.tgz#33a79af33f6fdac3a58d1d2813d591eaa9d98b6c"
-  integrity sha1-M6ea8z9v2sOljR0oE9WR6qnZi2w=
-
 css-prefers-color-scheme@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/css-prefers-color-scheme/-/css-prefers-color-scheme-3.1.1.tgz#6f830a2714199d4f0d0d0bb8a27916ed65cff1f4"

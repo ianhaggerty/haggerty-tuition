@@ -1,10 +1,12 @@
 import React from "react";
 import { ButtonSlide, ButtonText, ButtonIcon } from "../button";
 
+import { StyledNavigator } from "./navigator.styles";
+
 class Navigator extends React.Component {
   render() {
     return (
-      <nav>
+      <StyledNavigator>
         <ButtonSlide>
           <ButtonIcon name="arrow-round-back" />
           <ButtonText>Previous</ButtonText>
@@ -17,7 +19,7 @@ class Navigator extends React.Component {
           <ButtonIcon name="arrow-round-forward" />
           <ButtonText>Next</ButtonText>
         </ButtonSlide>
-      </nav>
+      </StyledNavigator>
     );
   }
 }
