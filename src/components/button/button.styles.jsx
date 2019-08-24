@@ -4,18 +4,15 @@ import camelCase from "camelcase";
 export const StyledButton = styled.button`
   background-color: ${props =>
     props.theme[camelCase(["color", props.backgroundColor])]};
-  border-radius: calc(${props => props.theme.navItemHeight} / 2);
+  border-radius: calc(${props => props.size} / 2);
 
-  display: inline-block;
-  height: ${props => props.theme.navItemHeight};
-  min-width: ${props => props.theme.navItemHeight};
-  padding: 0
-    calc(
-      (
-          ${props => props.theme.navItemHeight} -
-            ${props => props.theme.iconWidth}
-        ) / 2
-    );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  height: ${props => props.size};
+  min-width: ${props => props.size};
 
   font-family: museo-sans-rounded, sans-serif;
   font-weight: 500;
@@ -25,18 +22,14 @@ export const StyledButton = styled.button`
   color: ${props => props.theme.colorWhiteTint};
   box-shadow: ${props => props.theme.shadowFlat};
 
+  cursor: ${props => (props.active ? "cursor" : "not-allowed")};
+  opacity: ${props => (props.active ? 1 : 0.5)};
 
-  line-height: ${props => props.theme.navItemHeight};
+  z-index: 100;
 
-  cursor: pointer;
-
-  * {
-    vertical-align: middle;
-  }
-/* 
   &,
   & > * {
-    transition: 0.3s ease;
+    transition: 0.2s ease;
   }
 
   transform-origin: bottom;
@@ -49,5 +42,5 @@ export const StyledButton = styled.button`
   &:active {
     transform: scale(0.98);
     box-shadow: ${props => props.theme.shadowDepressed};
-  } */
+  }
 `;

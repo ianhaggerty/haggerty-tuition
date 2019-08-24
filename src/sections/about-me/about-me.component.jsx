@@ -35,10 +35,10 @@ const AboutMe = props => (
       </Paragraph>
     </Article>
     <Avatar
-      className="u-margin-top-small"
       style={{
         gridColumn: "col-right-start / col-right-end",
-        gridRow: "about-me-start / about-me-end"
+        gridRow: "about-me-start / about-me-end",
+        marginTop: "3.5rem"
       }}
     />
   </React.Fragment>

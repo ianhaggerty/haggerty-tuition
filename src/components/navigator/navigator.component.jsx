@@ -1,7 +1,7 @@
 import React from "react";
-import { ButtonSlide, ButtonText, ButtonIcon } from "../button";
+import { Button, ButtonIcon, ButtonTooltip } from "../button";
 
-import { StyledNavigator } from "./navigator.styles";
+import { StyledNavigator, RelativeDiv } from "./navigator.styles";
 
 class Navigator extends React.Component {
   state = {
@@ -24,15 +24,45 @@ class Navigator extends React.Component {
     const { hidden } = this.state;
     return (
       <StyledNavigator>
-        <div
+        <RelativeDiv className="u-margin-right-small">
+          <ButtonTooltip color="grey-light" alignment="center">
+            Previous
+          </ButtonTooltip>
+
+          <Button backgroundColor="grey-light" active={true}>
+            <ButtonIcon name="arrow-round-back" />
+          </Button>
+        </RelativeDiv>
+        <RelativeDiv className="u-margin-right-small">
+          <ButtonTooltip color="primary" alignment="center">
+            Get in touch
+          </ButtonTooltip>
+          <Button backgroundColor="primary" active={true}>
+            <ButtonIcon name="mail" />
+          </Button>
+        </RelativeDiv>
+        <RelativeDiv>
+          <ButtonTooltip color="grey-light">Next</ButtonTooltip>
+          <Button backgroundColor="grey-light" active={true}>
+            <ButtonIcon name="arrow-round-forward" />
+          </Button>
+        </RelativeDiv>
+      </StyledNavigator>
+    );
+  }
+}
+export default Navigator;
+
+/*
+<div
           style={{
             flexGrow: 1,
             flexBasis: 0,
             display: "flex",
             justifyContent: "flex-end"
           }}
-        >
-          <ButtonSlide
+        />
+<ButtonSlide
             width="7.8rem"
             hidden={this.state.reveal !== "previous"}
             onMouseEnter={() => this.reveal("previous")}
@@ -69,9 +99,4 @@ class Navigator extends React.Component {
             <ButtonText>&nbsp;&nbsp;Next</ButtonText>
             <ButtonIcon name="arrow-round-forward" />
           </ButtonSlide>
-        </div>
-      </StyledNavigator>
-    );
-  }
-}
-export default Navigator;
+          */

@@ -18,20 +18,15 @@ export const AvatarCircle = styled.div`
   img {
     width: ${props => props.theme.gridColWidth};
     height: ${props => props.theme.gridColWidth};
+
     /* safari render bug - need 50% here so no overflow */
     border-radius: 50%;
 
     position: absolute;
-    transition: 0.2s ease-out;
-
-    &:last-child {
-      /* TODO: Remove hover state for colour image */
-      opacity: 0;
-    }
+    transition: 8s ease;
   }
 
-  &:hover img:last-child {
-    transition: 0.2s ease-in;
-    opacity: 1;
+  &:hover img {
+    transform: scale(1.2);
   }
 `;

@@ -40,7 +40,7 @@ export const HamburgerWrap = styled.div`
 export const NavItem = styled.div`
   align-self: flex-end;
   width: ${props => props.theme.sidebarWidthOpen};
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
 
   cursor: pointer;
 
@@ -61,7 +61,7 @@ export const NavItem = styled.div`
 
   &:last-child {
     background-color: ${props => props.theme.colorPrimary};
-    margin-bottom: ${props => props.theme.iconWidth};
+    margin-bottom: calc(${props => props.theme.navItemHeight} / 2);
   }
 
   white-space: nowrap;

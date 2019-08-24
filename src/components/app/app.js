@@ -22,7 +22,7 @@ const App = props => {
   return (
     <React.Fragment>
       <Background />
-
+      <Sidebar />
       <Wrap {...props}>
         <MainLayout>
           <LogoType />
@@ -32,8 +32,6 @@ const App = props => {
       </Wrap>
 
       <Overlay />
-
-      <Sidebar />
     </React.Fragment>
   );
 };

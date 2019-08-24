@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Icon from "../icon/icon.component";
 
 const StyledIcon = styled(Icon)`
-  width: calc(${props => props.theme.iconWidth} * 0.85) !important;
+  /* width: calc(${props => props.theme.iconWidth} * 0.85) !important; */
 
   &:not(:only-child):first-child {
     margin-left: 0.5rem;
