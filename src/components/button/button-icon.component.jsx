@@ -7,7 +7,7 @@ const StyledIcon = styled(Icon)`
   width: calc(${props => props.theme.iconWidth} * 0.85) !important;
 
   &:not(:only-child):first-child {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
   }
 
   &:not(:only-child):last-child {

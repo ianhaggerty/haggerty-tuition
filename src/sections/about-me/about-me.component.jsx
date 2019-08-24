@@ -8,6 +8,7 @@ import {
   ButtonText,
   ButtonSlide
 } from "../../components/button";
+import InlineButton from "../../components/inline-button/inline-button.component";
 
 const AboutMe = props => (
   <React.Fragment>
@@ -26,6 +27,11 @@ const AboutMe = props => (
         Commanding extensive subject knowledge, profound insight and great
         communication skills—I help my students reach their highest levels of
         comprehension.
+      </Paragraph>
+      <Paragraph>
+        <InlineButton>Enquire now</InlineButton> or{" "}
+        <InlineButton color="grey-light">read on</InlineButton> to learn a
+        little more about me.
       </Paragraph>
     </Article>
     <Avatar

@@ -25,7 +25,7 @@ export const StyledButton = styled.button`
   color: ${props => props.theme.colorWhiteTint};
   box-shadow: ${props => props.theme.shadowFlat};
 
-  
+
   line-height: ${props => props.theme.navItemHeight};
 
   cursor: pointer;
