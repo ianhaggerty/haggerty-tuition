@@ -34,12 +34,12 @@ export const StyledButton = styled.button`
 
   transform-origin: bottom;
 
-  &:hover {
+  &:hover.active {
     transform: scale(1.03);
     box-shadow: ${props => props.theme.shadowElevated};
   }
 
-  &:active {
+  &:active.active {
     transform: scale(0.98);
     box-shadow: ${props => props.theme.shadowDepressed};
   }

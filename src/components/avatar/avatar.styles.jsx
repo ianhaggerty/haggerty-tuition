@@ -23,10 +23,11 @@ export const AvatarCircle = styled.div`
     border-radius: 50%;
 
     position: absolute;
-    transition: 8s ease;
+    transition: 1s ease;
   }
 
   &:hover img {
     transform: scale(1.2);
+    transition: 16s linear;
   }
 `;

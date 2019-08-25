@@ -1,6 +1,31 @@
 import styled from "styled-components";
 
-export const ToolTipWrap = styled.div`
+export const TooltipOuterWrap = styled.div`
+  transition: 0.4s ease;
+  position: absolute;
+
+  &.tooltip-enter {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+
+  &.tooltip-enter-active {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+
+  &.tooltip-exit {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+
+  &.tooltip-exit-active {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+`;
+
+export const ToolTipInnerWrap = styled.div`
   background-color: ${props => props.color};
   height: calc(${props => props.theme.navItemHeight} / 2);
 

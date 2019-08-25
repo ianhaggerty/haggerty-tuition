@@ -24,7 +24,7 @@ export const Grid = styled.main`
     [header-end about-me-start]
     auto
     [about-me-end navigator-start]
-    auto
+    calc(${props => props.theme.navItemHeight} * 1.5)
     [navigator-end];
   grid-column-gap: ${props => props.theme.gridColGap};
   justify-content: center;

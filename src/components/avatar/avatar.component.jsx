@@ -1,7 +1,6 @@
 import React from "react";
 
-import selfy from "../../assets/photos/avatar.jpg";
-import selfyBW from "../../assets/photos/avatarBW.jpg";
+import selfy from "../../assets/photos/selfyonthehoe.jpg";
 
 import { AvatarCircle } from "./avatar.styles";
 

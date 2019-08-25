@@ -5,7 +5,8 @@ import { withTheme } from "styled-components";
 
 import {
   ToolTipText,
-  ToolTipWrap,
+  TooltipOuterWrap,
+  ToolTipInnerWrap,
   ToolTipPointer
 } from "./button-tooltip.styles";
 
@@ -13,12 +14,12 @@ import {
 const ButtonTooltip = ({ children, color, alignment, ...props }) => {
   const colorStr = props.theme[camelcase(["color", color])];
   return (
-    <div style={{ position: "absolute" }}>
-      <ToolTipWrap color={colorStr} alignment={alignment}>
-        <ToolTipPointer color={colorStr} className={alignment} />
+    <TooltipOuterWrap>
+      <ToolTipInnerWrap color={colorStr}>
+        <ToolTipPointer color={colorStr} />
         <ToolTipText>{children}</ToolTipText>
-      </ToolTipWrap>
-    </div>
+      </ToolTipInnerWrap>
+    </TooltipOuterWrap>
   );
 };
 
