@@ -1,5 +1,16 @@
 import { createGlobalStyle } from "styled-components";
 
+import {
+  COLOR_GREY_DARK,
+  COLOR_PRIMARY,
+  COLOR_WHITE_PURE,
+  SIDEBAR_WIDTH_CLOSED
+} from "./variables";
+import {
+  MIXIN_FONT_MUSEO_NORMAL,
+  MIXIN_CENTER_FLEX_CHILDREN
+} from "./mixins.styles";
+
 export const GlobalStyle = createGlobalStyle`
   *,
   *::after,
@@ -15,17 +26,21 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: museo-sans-rounded, sans-serif;
-    font-weight: 300;
-    font-style: normal;
+    ${MIXIN_FONT_MUSEO_NORMAL}
+    color: ${COLOR_GREY_DARK};
     line-height: 1.7;
-    color: ${props => props.theme.colorGreyDark};
     box-sizing: border-box;
     overflow-x: hidden;
   }
 
   ::selection {
-    background-color: ${props => props.theme.colorPrimary};
-    color: ${props => props.theme.colorWhitePure};
+    background-color: ${COLOR_PRIMARY};
+    color: ${COLOR_WHITE_PURE};
+  }
+
+  #root {
+    height: 100vh;
+    padding-left: ${SIDEBAR_WIDTH_CLOSED};
+    ${MIXIN_CENTER_FLEX_CHILDREN};
   }
 `;

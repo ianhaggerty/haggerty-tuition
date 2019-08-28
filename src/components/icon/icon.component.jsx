@@ -1,26 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { withTheme } from "styled-components";
-import colors from "../../styles/colors.json";
+import camelCase from "camelcase";
 
-import { getIconSVG, iconDict } from "./icons.dict";
-import kebabCase from "kebab-case";
+import iconDict from "./icon.dictionary";
+import { ICON_WIDTH, ICON_COLOR } from "../../styles/variables";
 
-const Icon = ({ name, color, size, theme, ...otherProps }) => {
-  const IconSVG = getIconSVG(name);
-  const iconColor = color || theme.iconColor;
-  const iconSize = size || theme.iconWidth;
+const Icon = ({ name, color, size, ...props }) => {
+  const IconSVG = iconDict[camelCase(name)];
 
-  return (
-    <IconSVG style={{ fill: iconColor, width: iconSize }} {...otherProps} />
-  );
+  return <IconSVG style={{ fill: color, width: size }} {...props} />;
+};
+
+Icon.defaultProps = {
+  color: ICON_COLOR,
+  size: ICON_WIDTH
 };
 
 Icon.propTypes = {
-  name: PropTypes.oneOf(Object.keys(iconDict).map(kebabCase)).isRequired,
-  color: PropTypes.oneOf(Object.keys(colors)),
+  name: PropTypes.string.isRequired,
+  color: PropTypes.string,
   size: PropTypes.string
 };
 
-export default withTheme(Icon);
+export default Icon;

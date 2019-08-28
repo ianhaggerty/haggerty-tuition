@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectSidebarOpen } from "../../redux/sidebar/sidebar.selectors";
+
 import { CSSTransition } from "react-transition-group";
 
 import { StyledOverlay } from "./overlay.styles";

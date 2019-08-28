@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -9,7 +8,7 @@ import { toggleSidebar } from "../../redux/sidebar/sidebar.actions";
 import {
   Wrapper,
   HamburgerWrap,
-  NavItem,
+  SidebarItem,
   NavLabel,
   NavIcon
 } from "./sidebar.styles";
@@ -19,37 +18,38 @@ import Icon from "../icon/icon.component";
 
 class Sidebar extends React.Component {
   render() {
-    const { sidebarOpen } = this.props;
+    const { sidebarOpen, toggleSidebar } = this.props;
+
     return (
       <Wrapper sidebarOpen={sidebarOpen}>
-        <HamburgerWrap onClick={this.props.toggleSidebar}>
-          <Hamburger icon={this.props.sidebarOpen ? "arrow-left" : "menu"} />
+        <HamburgerWrap onClick={toggleSidebar}>
+          <Hamburger icon={sidebarOpen ? "arrow-left" : "menu"} />
         </HamburgerWrap>
 
-        <NavItem>
+        <SidebarItem>
           <NavLabel>About Me</NavLabel>
           <NavIcon>
             <Icon name="person" />
           </NavIcon>
-        </NavItem>
-        <NavItem>
+        </SidebarItem>
+        <SidebarItem>
           <NavLabel>Background</NavLabel>
           <NavIcon>
             <Icon name="medal" />
           </NavIcon>
-        </NavItem>
-        <NavItem>
+        </SidebarItem>
+        <SidebarItem>
           <NavLabel>Approach</NavLabel>
           <NavIcon>
             <Icon name="people" />
           </NavIcon>
-        </NavItem>
-        <NavItem>
+        </SidebarItem>
+        <SidebarItem>
           <NavLabel>Get in touch</NavLabel>
           <NavIcon>
             <Icon name="mail" />
           </NavIcon>
-        </NavItem>
+        </SidebarItem>
       </Wrapper>
     );
   }

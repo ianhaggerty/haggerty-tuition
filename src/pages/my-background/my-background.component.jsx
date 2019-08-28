@@ -4,7 +4,7 @@ import { Article, Heading, Paragraph } from "../../components/article";
 
 const Background = () => (
   <React.Fragment>
-    <Article style={{ gridCol: "1 / 2;" }}>
+    <Article style={{ gridCol: "col-left-start / col-right-end;" }}>
       <Heading>My Background</Heading>
       <Paragraph>I’m a local here in Plymouth.</Paragraph>
       <Paragraph>

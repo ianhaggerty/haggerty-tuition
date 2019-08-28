@@ -8,12 +8,12 @@ import withToolTipTimer from "../with-tooltip-timer/with-tooltip-timer";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectTooltipActive } from "../../redux/tooltip/tooltip.selectors";
+
 import { CSSTransition } from "react-transition-group";
-import { removeProperties } from "@babel/types";
 
-const ButtonWithTooltipTimer = withToolTipTimer(Button);
+const ButtonWithTimer = withToolTipTimer(Button);
 
-const ButtonWithTooltipLast = props => {
+const NavigatorButton = props => {
   const [hover, setHover] = useState(false);
 
   return (
@@ -28,15 +28,16 @@ const ButtonWithTooltipLast = props => {
           {props.tooltip}
         </ButtonTooltip>
       </CSSTransition>
+      {/* If not active, just use a regular button */}
       {props.active ? (
-        <ButtonWithTooltipTimer
+        <ButtonWithTimer
           backgroundColor={props.backgroundColor}
           active={props.active}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
         >
           <ButtonIcon name={props.icon} />
-        </ButtonWithTooltipTimer>
+        </ButtonWithTimer>
       ) : (
         <Button
           backgroundColor={props.backgroundColor}
@@ -55,4 +56,4 @@ const mapStateToProps = createStructuredSelector({
   tooltipActive: selectTooltipActive
 });
 
-export default connect(mapStateToProps)(ButtonWithTooltipLast);
+export default connect(mapStateToProps)(NavigatorButton);

@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+import { COLOR_GREY_DARK } from "../../styles/variables";
+import {
+  MIXIN_FONT_CASLON_NORMAL,
+  MIXIN_FONT_CASLON_BOLD_ITALIC
+} from "../../styles/mixins.styles";
+
 export const LogoBox = styled.header`
   text-align: center;
   margin-top: 4rem;
@@ -8,21 +14,17 @@ export const LogoBox = styled.header`
 `;
 
 export const Title = styled.h1`
-  font-family: adobe-caslon-pro, serif;
-  font-weight: 400;
-  font-style: normal;
+  ${MIXIN_FONT_CASLON_NORMAL}
   text-transform: uppercase;
   font-size: 4rem;
   letter-spacing: 6.4rem;
   margin-right: -6.4rem;
-  color: ${props => props.theme.colorGreyDark};
+  color: ${COLOR_GREY_DARK};
 `;
 
 export const Subtitle = styled.h1`
-  font-family: adobe-caslon-pro, serif;
-  font-weight: 600;
-  font-style: italic;
+  ${MIXIN_FONT_CASLON_BOLD_ITALIC}
   font-size: 6.4rem;
   margin-top: -3.2rem;
-  color: ${props => props.theme.colorGreyDark};
+  color: ${COLOR_GREY_DARK};
 `;

@@ -1,20 +1,38 @@
 import styled from "styled-components";
 
+import {
+  APP_HEIGHT,
+  SIDEBAR_WIDTH_OPEN,
+  SIDEBAR_WIDTH_CLOSED,
+  BOX_SHADOW_DIFFUSE,
+  COLOR_PRIMARY,
+  COLOR_GREY_MEDIUM,
+  COLOR_GREY_DARK,
+  COLOR_ACCENT,
+  COLOR_WHITE_TINT,
+  SIDEBAR_TRANSITION,
+  SIDEBAR_ITEM_HEIGHT,
+  ICON_WIDTH
+} from "../../styles/variables";
+
+import {
+  MIXIN_VERTICAL_CENTER_ABSOLUTE_SELF,
+  MIXIN_CENTER_FLEX_CHILDREN,
+  MIXIN_FONT_MUSEO_BOLD
+} from "../../styles/mixins.styles";
+
 export const Wrapper = styled.nav`
-  height: ${props => props.theme.appHeight};
+  height: ${APP_HEIGHT};
   max-height: 100vh;
   width: ${props =>
-    props.sidebarOpen
-      ? props.theme.sidebarWidthOpen
-      : props.theme.sidebarWidthClosed};
+    props.sidebarOpen ? SIDEBAR_WIDTH_OPEN : SIDEBAR_WIDTH_CLOSED};
 
-  box-shadow: ${props => props.theme.shadowLong};
-  background-color: ${props => props.theme.colorGreyDark};
-  transition: ${props => props.theme.sidebarTransition};
+  box-shadow: ${BOX_SHADOW_DIFFUSE};
+  background-color: ${COLOR_GREY_DARK};
+  transition: ${SIDEBAR_TRANSITION};
 
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  ${MIXIN_VERTICAL_CENTER_ABSOLUTE_SELF}
+  left: 0;
 
   z-index: 1000;
   overflow: hidden;
@@ -33,35 +51,31 @@ export const HamburgerWrap = styled.div`
   transition: 0.5s ease;
 
   &:hover {
-    background-color: ${props => props.theme.colorGreyMedium};
+    background-color: ${COLOR_GREY_MEDIUM};
   }
 `;
 
-export const NavItem = styled.div`
-  align-self: flex-end;
-  width: ${props => props.theme.sidebarWidthOpen};
-  margin-bottom: 0rem;
+export const SidebarItem = styled.div`
+  width: ${SIDEBAR_WIDTH_OPEN};
+  height: ${SIDEBAR_ITEM_HEIGHT};
 
   cursor: pointer;
-
-  height: ${props => props.theme.navItemHeight};
-
   display: flex;
   justify-content: flex-end;
   align-content: center;
 
   /* TODO - make accent color dynamic */
   &:nth-child(2) > * {
-    color: ${props => props.theme.colorAccent};
+    color: ${COLOR_ACCENT};
 
     svg {
-      fill: ${props => props.theme.colorAccent};
+      fill: ${COLOR_ACCENT};
     }
   }
 
   &:last-child {
-    background-color: ${props => props.theme.colorPrimary};
-    margin-bottom: calc(${props => props.theme.navItemHeight} / 2);
+    background-color: ${COLOR_PRIMARY};
+    margin-bottom: calc(${SIDEBAR_ITEM_HEIGHT} / 2);
   }
 
   white-space: nowrap;
@@ -69,29 +83,19 @@ export const NavItem = styled.div`
 
   transition: 0.5s ease;
   &:hover:not(:last-child) {
-    background-color: ${props => props.theme.colorGreyMedium};
+    background-color: ${COLOR_GREY_MEDIUM};
   }
 `;
 
 export const NavLabel = styled.div`
-  font-family: museo-sans-rounded, sans-serif;
-  font-weight: 500;
-  font-style: normal;
+  ${MIXIN_FONT_MUSEO_BOLD}
   font-size: 1.7rem;
-  color: ${props => props.theme.colorWhiteTint};
+  color: ${COLOR_WHITE_TINT};
   margin: auto 1rem;
 `;
 
 export const NavIcon = styled.div`
-  padding: 0
-    calc(
-      (
-          ${props => props.theme.sidebarWidthClosed} -
-            ${props => props.theme.iconWidth}
-        ) / 2
-    );
+  padding: 0 calc((${SIDEBAR_WIDTH_CLOSED} - ${ICON_WIDTH}) / 2);
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${MIXIN_CENTER_FLEX_CHILDREN}
 `;

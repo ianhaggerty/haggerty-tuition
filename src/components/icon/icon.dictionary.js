@@ -8,9 +8,7 @@ import { ReactComponent as ArrowRoundBack } from "../../assets/icons/arrow-round
 import { ReactComponent as ArrowRoundForward } from "../../assets/icons/arrow-round-forward.svg";
 import { ReactComponent as ArrowRoundUp } from "../../assets/icons/arrow-round-up.svg";
 
-import camelcase from "camelcase";
-
-export const iconDict = {
+const iconDict = {
   person: Person,
   medal: Medal,
   people: People,
@@ -21,6 +19,4 @@ export const iconDict = {
   arrowRoundUp: ArrowRoundUp
 };
 
-export const getIconSVG = name => {
-  return iconDict[camelcase(name)];
-};
+export default iconDict;

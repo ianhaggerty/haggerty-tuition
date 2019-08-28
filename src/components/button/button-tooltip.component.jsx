@@ -1,8 +1,5 @@
 import React from "react";
 
-import camelcase from "camelcase";
-import { withTheme } from "styled-components";
-
 import {
   ToolTipText,
   TooltipOuterWrap,
@@ -11,16 +8,15 @@ import {
 } from "./button-tooltip.styles";
 
 // Needs to be in a relatively positioned parent
-const ButtonTooltip = ({ children, color, alignment, ...props }) => {
-  const colorStr = props.theme[camelcase(["color", color])];
+const ButtonTooltip = ({ children, color, ...props }) => {
   return (
-    <TooltipOuterWrap>
-      <ToolTipInnerWrap color={colorStr}>
-        <ToolTipPointer color={colorStr} />
+    <TooltipOuterWrap {...props}>
+      <ToolTipInnerWrap color={color}>
+        <ToolTipPointer color={color} />
         <ToolTipText>{children}</ToolTipText>
       </ToolTipInnerWrap>
     </TooltipOuterWrap>
   );
 };
 
-export default withTheme(ButtonTooltip);
+export default ButtonTooltip;

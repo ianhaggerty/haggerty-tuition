@@ -1,25 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import kebabCase from "kebab-case";
-
-import colors from "../../styles/colors";
-import theme from "../../styles/theme.styles";
-
 import { StyledButton } from "./button.styles";
+import { SIDEBAR_ITEM_HEIGHT, COLOR_PRIMARY } from "../../styles/variables";
 
 const Button = props => (
   <StyledButton {...props} className={props.active ? "active" : "inactive"} />
 );
 
 Button.defaultProps = {
-  backgroundColor: "primary",
-  active: true,
-  size: theme.navItemHeight
+  backgroundColor: COLOR_PRIMARY,
+  size: SIDEBAR_ITEM_HEIGHT,
+  active: true
 };
 
 Button.propTypes = {
-  backgroundColor: PropTypes.oneOf(Object.keys(colors).map(kebabCase)),
+  backgroundColor: PropTypes.string,
   active: PropTypes.bool,
   size: PropTypes.string
 };

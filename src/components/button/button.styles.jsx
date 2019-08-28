@@ -1,26 +1,31 @@
 import styled from "styled-components";
-import camelCase from "camelcase";
+
+import {
+  MIXIN_CENTER_FLEX_CHILDREN,
+  MIXIN_FONT_MUSEO_BOLD
+} from "../../styles/mixins.styles";
+
+import {
+  COLOR_WHITE_TINT,
+  BOX_SHADOW_FLAT,
+  BOX_SHADOW_ELAVATED,
+  BOX_SHADOW_DEPRESSED
+} from "../../styles/variables";
 
 export const StyledButton = styled.button`
-  background-color: ${props =>
-    props.theme[camelCase(["color", props.backgroundColor])]};
+  background-color: ${props => props.backgroundColor};
   border-radius: calc(${props => props.size} / 2);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  ${MIXIN_CENTER_FLEX_CHILDREN}
+  ${MIXIN_FONT_MUSEO_BOLD}
+  font-size: 1.7rem;
 
+  position: relative;
   height: ${props => props.size};
   min-width: ${props => props.size};
 
-  font-family: museo-sans-rounded, sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 1.7rem;
-
-  color: ${props => props.theme.colorWhiteTint};
-  box-shadow: ${props => props.theme.shadowFlat};
+  color: ${COLOR_WHITE_TINT};
+  box-shadow: ${BOX_SHADOW_FLAT};
 
   cursor: ${props => (props.active ? "cursor" : "not-allowed")};
   opacity: ${props => (props.active ? 1 : 0.5)};
@@ -36,11 +41,11 @@ export const StyledButton = styled.button`
 
   &:hover.active {
     transform: scale(1.03);
-    box-shadow: ${props => props.theme.shadowElevated};
+    box-shadow: ${BOX_SHADOW_ELAVATED};
   }
 
   &:active.active {
     transform: scale(0.98);
-    box-shadow: ${props => props.theme.shadowDepressed};
+    box-shadow: ${BOX_SHADOW_DEPRESSED};
   }
 `;

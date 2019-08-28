@@ -1,31 +1,31 @@
 import styled from "styled-components";
-import { parser } from "css-math";
+import { math } from "polished";
+
+import { SIDEBAR_WIDTH_CLOSED, COLOR_WHITE_PURE } from "../../styles/variables";
 
 export const Wrap = styled.div`
-  width: ${props => props.theme.sidebarWidthClosed};
-  height: ${props => props.theme.sidebarWidthClosed};
+  width: ${SIDEBAR_WIDTH_CLOSED};
+  height: ${SIDEBAR_WIDTH_CLOSED};
   position: relative;
   cursor: pointer;
   display: inline-block;
 `;
 
 const lineLength = "4rem";
-const lineWidth = ".4rem";
-const borderRadius = parser(`${lineWidth} / 2`);
+const lineWidth = "0.4rem";
+const borderRadius = math(`${lineWidth} / 2`);
 const translateY = "1.4rem";
 
 export const Line = styled.div`
-  background-color: ${props => props.theme.colorWhitePure};
+  background-color: ${COLOR_WHITE_PURE};
   border-radius: ${borderRadius};
 
   height: ${lineWidth};
   width: ${lineLength};
 
   position: absolute;
-  left: ${props =>
-    parser(`${props.theme.sidebarWidthClosed} / 2 - ${lineLength} / 2`)};
-  top: ${props =>
-    parser(`${props.theme.sidebarWidthClosed} / 2 - ${lineWidth} / 2`)};
+  left: calc(${SIDEBAR_WIDTH_CLOSED} / 2 - ${lineLength} / 2);
+  top: calc(${SIDEBAR_WIDTH_CLOSED} / 2 - ${lineWidth} / 2);
 
   transition: 0.5s ease;
 
@@ -37,7 +37,7 @@ export const Line = styled.div`
     &:nth-child(2) {
       width: 0rem;
       &:nth-child(2) {
-        left: ${props => parser(`${props.theme.sidebarWidthClosed} / 2`)};
+        left: calc(${SIDEBAR_WIDTH_CLOSED} / 2);
       }
     }
 

@@ -1,38 +1,32 @@
 import React from "react";
-import { Button, ButtonIcon, ButtonTooltip } from "../button";
-
-import { StyledNavigator } from "./navigator.styles";
-import withToolTipTimer from "../with-tooltip-timer/with-tooltip-timer";
 
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectTooltipActive } from "../../redux/tooltip/tooltip.selectors";
-import { CSSTransition } from "react-transition-group";
 
-import ButtonWithTooltip from "./button-with-tool-tip.component";
+import ButtonWithTooltip from "./navigator-button.component";
+import { StyledNavigator } from "./navigator.styles";
 
-const ButtonWithTooltipTimer = withToolTipTimer(Button);
+import { COLOR_PRIMARY, COLOR_GREY_LIGHT } from "../../styles/variables";
 
 class Navigator extends React.Component {
   render() {
     return (
       <StyledNavigator>
         <ButtonWithTooltip
-          backgroundColor="grey-light"
+          backgroundColor={COLOR_GREY_LIGHT}
           tooltip="Previous"
           icon="arrow-round-back"
           active={false}
-          className="u-margin-right-small"
         />
         <ButtonWithTooltip
-          backgroundColor="primary"
+          backgroundColor={COLOR_PRIMARY}
           tooltip="Get in touch"
           icon="mail"
           active={true}
-          className="u-margin-right-small"
         />
         <ButtonWithTooltip
-          backgroundColor="grey-light"
+          backgroundColor={COLOR_GREY_LIGHT}
           tooltip="Next"
           icon="arrow-round-forward"
           active={true}

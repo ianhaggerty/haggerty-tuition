@@ -1,13 +1,12 @@
 import React from "react";
 
+import { Circle, Img } from "./avatar.styles";
 import selfy from "../../assets/photos/selfyonthehoe.jpg";
 
-import { AvatarCircle } from "./avatar.styles";
-
 const Avatar = props => (
-  <AvatarCircle {...props}>
-    <img src={selfy} alt="Avatar" />
-  </AvatarCircle>
+  <Circle {...props}>
+    <Img src={selfy} alt="Avatar" />
+  </Circle>
 );
 
 export default Avatar;

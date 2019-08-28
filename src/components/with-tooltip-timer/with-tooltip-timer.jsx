@@ -1,7 +1,9 @@
 import React from "react";
+
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectTooltipActive } from "../../redux/tooltip/tooltip.selectors";
+
 import {
   cancelActiveTimer,
   startActiveTimer,
@@ -22,11 +24,12 @@ const mapDispatchToProps = dispatch => ({
 
 const withToolTipTimer = WrappedComponent => {
   class TooltipTimedComponent extends React.Component {
-    mouseEnter = (...args) => {
+    mouseEnter = () => {
       const {
         tooltipActive,
         startActiveTimer,
-        cancelInactiveTimer
+        cancelInactiveTimer,
+        onMouseEnter
       } = this.props;
 
       if (tooltipActive) {
@@ -35,16 +38,17 @@ const withToolTipTimer = WrappedComponent => {
         startActiveTimer();
       }
 
-      if (this.props.onMouseEnter) {
-        this.props.onMouseEnter();
+      if (onMouseEnter) {
+        onMouseEnter();
       }
     };
 
-    mouseLeave = (...args) => {
+    mouseLeave = () => {
       const {
         tooltipActive,
         cancelActiveTimer,
-        startInactiveTimer
+        startInactiveTimer,
+        onMouseLeave
       } = this.props;
 
       if (tooltipActive) {
@@ -53,8 +57,8 @@ const withToolTipTimer = WrappedComponent => {
         cancelActiveTimer();
       }
 
-      if (this.props.onMouseLeave) {
-        this.props.onMouseLeave();
+      if (onMouseLeave) {
+        onMouseLeave();
       }
     };
 

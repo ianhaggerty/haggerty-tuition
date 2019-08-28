@@ -1,20 +1,20 @@
 import styled from "styled-components";
 
+import { SIDEBAR_ITEM_HEIGHT } from "../../styles/variables";
+import { MIXIN_CENTER_FLEX_CHILDREN } from "../../styles/mixins.styles";
+
 export const ButtonWithTooltip = styled.div`
   position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${MIXIN_CENTER_FLEX_CHILDREN}
 `;
 
 export const StyledNavigator = styled.div`
-  grid-column: col-left-start / col-right-end;
-  grid-row: navigator-start / navigator-end;
-  text-align: center;
-  align-self: start;
-
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  width: calc(${SIDEBAR_ITEM_HEIGHT} * 3.75);
+  position: absolute;
+  bottom: calc(${SIDEBAR_ITEM_HEIGHT} * 0.5);
+
+  left: 50%;
+  transform: translateX(-50%);
 `;

@@ -1,32 +1,31 @@
 import styled from "styled-components";
 
-const diameter = "38.4rem";
+import { GRID_COL_WIDTH, BOX_SHADOW_FLAT } from "../../styles/variables";
+import { MIXIN_CENTER_FLEX_CHILDREN } from "../../styles/mixins.styles";
 
-export const AvatarCircle = styled.div`
-  width: ${props => props.theme.gridColWidth};
-  height: ${props => props.theme.gridColWidth};
+export const Circle = styled.div`
+  width: ${GRID_COL_WIDTH};
+  height: ${GRID_COL_WIDTH};
   border-radius: 50%;
   overflow: hidden;
   position: relative;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  box-shadow: ${BOX_SHADOW_FLAT};
 
-  box-shadow: ${props => props.theme.shadowFlat};
+  ${MIXIN_CENTER_FLEX_CHILDREN}
+`;
 
-  img {
-    width: ${props => props.theme.gridColWidth};
-    height: ${props => props.theme.gridColWidth};
+export const Img = styled.img`
+  width: ${GRID_COL_WIDTH};
+  height: ${GRID_COL_WIDTH};
 
-    /* safari render bug - need 50% here so no overflow */
-    border-radius: 50%;
+  /* safari render bug - need 50% here so no overflow */
+  border-radius: 50%;
 
-    position: absolute;
-    transition: 1s ease;
-  }
+  position: absolute;
+  transition: 1s ease;
 
-  &:hover img {
+  ${Circle}:hover & {
     transform: scale(1.2);
     transition: 16s linear;
   }
