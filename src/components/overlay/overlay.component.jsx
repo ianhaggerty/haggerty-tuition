@@ -2,19 +2,24 @@ import React from "react";
 
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import { selectSidebarOpen } from "../../redux/sidebar/sidebar.selectors";
+import { selectOverlayVisible } from "../../redux/overlay/overlay.selectors";
 
 import { CSSTransition } from "react-transition-group";
 
 import { StyledOverlay } from "./overlay.styles";
 
-const Overlay = ({ sidebarOpen, ...otherProps }) => (
-  <CSSTransition in={sidebarOpen} classNames="fade" timeout={500} unmountOnExit>
+const Overlay = ({ overlayVisible, ...otherProps }) => (
+  <CSSTransition
+    in={overlayVisible}
+    classNames="fade"
+    timeout={500}
+    unmountOnExit
+  >
     <StyledOverlay {...otherProps} />
   </CSSTransition>
 );
 const mapStateToProps = createStructuredSelector({
-  sidebarOpen: selectSidebarOpen
+  overlayVisible: selectOverlayVisible
 });
 
 export default connect(mapStateToProps)(Overlay);

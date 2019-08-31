@@ -1,7 +1,7 @@
 const SidebarActionTypes = {
-  OPEN: "OPEN",
-  CLOSE: "CLOSE",
-  TOGGLE: "TOGGLE"
+  SIDEBAR_OPEN: "SIDEBAR_OPEN",
+  SIDEBAR_CLOSE: "SIDEBAR_CLOSE",
+  SIDEBAR_TOGGLE: "SIDEBAR_TOGGLE"
 };
 
 export default SidebarActionTypes;

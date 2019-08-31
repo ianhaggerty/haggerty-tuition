@@ -1,13 +1,13 @@
 import sidebarActionTypes from "./sidebar.types";
 
 export const openSidebar = () => ({
-  type: sidebarActionTypes.OPEN
+  type: sidebarActionTypes.SIDEBAR_OPEN
 });
 
 export const closeSidebar = () => ({
-  type: sidebarActionTypes.CLOSE
+  type: sidebarActionTypes.SIDEBAR_CLOSE
 });
 
 export const toggleSidebar = () => ({
-  type: sidebarActionTypes.TOGGLE
+  type: sidebarActionTypes.SIDEBAR_TOGGLE
 });

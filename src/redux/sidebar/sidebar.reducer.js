@@ -6,20 +6,15 @@ const INITIAL_STATE = {
 
 const sidebarReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case SidebarActionTypes.OPEN:
+    case SidebarActionTypes.SIDEBAR_OPEN:
       return {
         ...state,
         open: true
       };
-    case SidebarActionTypes.CLOSE:
+    case SidebarActionTypes.SIDEBAR_CLOSE:
       return {
         ...state,
         open: false
-      };
-    case SidebarActionTypes.TOGGLE:
-      return {
-        ...state,
-        open: !state.open
       };
     default:
       return state;
