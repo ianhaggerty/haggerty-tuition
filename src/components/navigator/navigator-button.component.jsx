@@ -32,19 +32,14 @@ const NavigatorButton = props => {
       {props.active ? (
         <ButtonWithTimer
           backgroundColor={props.backgroundColor}
-          active={props.active}
+          active={true}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
         >
           <ButtonIcon name={props.icon} />
         </ButtonWithTimer>
       ) : (
-        <Button
-          backgroundColor={props.backgroundColor}
-          active={props.active}
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
-        >
+        <Button backgroundColor={props.backgroundColor} active={false}>
           <ButtonIcon name={props.icon} />
         </Button>
       )}

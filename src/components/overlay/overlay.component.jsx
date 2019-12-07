@@ -2,24 +2,50 @@ import React from "react";
 
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import { selectOverlayVisible } from "../../redux/overlay/overlay.selectors";
+import { withRouter } from "react-router-dom";
+import qs from "query-string";
 
 import { CSSTransition } from "react-transition-group";
 
 import { StyledOverlay } from "./overlay.styles";
 
-const Overlay = ({ overlayVisible, ...otherProps }) => (
-  <CSSTransition
-    in={overlayVisible}
-    classNames="fade"
-    timeout={500}
-    unmountOnExit
-  >
-    <StyledOverlay {...otherProps} />
-  </CSSTransition>
-);
-const mapStateToProps = createStructuredSelector({
-  overlayVisible: selectOverlayVisible
-});
+class Overlay extends React.Component {
+  isOverlayVisible = () => {
+    const { location } = this.props;
 
-export default connect(mapStateToProps)(Overlay);
+    const currentQuery = location.search;
+    const currentQueryParsed = qs.parse(currentQuery);
+    return !!currentQueryParsed.overlay;
+  };
+
+  closeOverlay = () => {
+    const { history, location } = this.props;
+
+    const currentQuery = location.search;
+    const currentQueryParsed = qs.parse(currentQuery);
+
+    const newQueryParsed = {
+      ...currentQueryParsed,
+      overlay: undefined
+    };
+
+    const newQuery = qs.stringify(newQueryParsed);
+    history.push({ search: newQuery });
+  };
+
+  render() {
+    return (
+      <CSSTransition
+        in={this.isOverlayVisible()}
+        classNames="fade"
+        timeout={500}
+        unmountOnExit
+      >
+        <StyledOverlay {...this.props} onClick={this.closeOverlay} />
+      </CSSTransition>
+    );
+  }
+}
+
+const mapStateToProps = createStructuredSelector({});
+export default withRouter(connect(mapStateToProps)(Overlay));

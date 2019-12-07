@@ -5,13 +5,8 @@ import {
   APP_HEIGHT,
   APP_WIDTH,
   BOX_SHADOW_DIFFUSE,
-  COLOR_WHITE_PURE,
-  SIDEBAR_WIDTH_CLOSED
+  COLOR_WHITE_PURE
 } from "./styles/variables";
-import {
-  MIXIN_CENTER_FLEX_CHILDREN,
-  MIXIN_CENTER_ABSOLUTE_SELF
-} from "./styles/mixins.styles";
 
 export const Window = styled.div`
   background-color: ${rgba(COLOR_WHITE_PURE, 0.96)};

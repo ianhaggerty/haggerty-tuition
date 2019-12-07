@@ -1,9 +1,8 @@
 import React from "react";
-
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import { selectSidebarOpen } from "../../redux/sidebar/sidebar.selectors";
-import { toggleSidebar } from "../../redux/sidebar/sidebar.actions";
+import { withRouter } from "react-router-dom";
+import qs from "query-string";
 
 import {
   Wrapper,
@@ -17,12 +16,43 @@ import Hamburger from "../hamburger/hamburger.component";
 import Icon from "../icon/icon.component";
 
 class Sidebar extends React.Component {
+  toggleSidebar = () => {
+    const { history, location } = this.props;
+
+    const currentQuery = location.search;
+    const currentQueryParsed = qs.parse(currentQuery);
+
+    let newQueryParsed;
+    if (currentQueryParsed.overlay === "sidebar") {
+      newQueryParsed = {
+        ...currentQueryParsed,
+        overlay: undefined
+      };
+    } else {
+      newQueryParsed = {
+        ...currentQueryParsed,
+        overlay: "sidebar"
+      };
+    }
+
+    const newQuery = qs.stringify(newQueryParsed);
+    history.push({ search: newQuery });
+  };
+
+  isSidebarOpen = () => {
+    const { location } = this.props;
+
+    const currentQuery = location.search;
+    const currentQueryParsed = qs.parse(currentQuery);
+    return currentQueryParsed.overlay === "sidebar";
+  };
+
   render() {
-    const { sidebarOpen, toggleSidebar } = this.props;
+    const sidebarOpen = this.isSidebarOpen();
 
     return (
       <Wrapper sidebarOpen={sidebarOpen}>
-        <HamburgerWrap onClick={toggleSidebar}>
+        <HamburgerWrap onClick={this.toggleSidebar}>
           <Hamburger icon={sidebarOpen ? "arrow-left" : "menu"} />
         </HamburgerWrap>
 
@@ -56,14 +86,16 @@ class Sidebar extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  sidebarOpen: selectSidebarOpen
+  // sidebarOpen: selectSidebarOpen
 });
 
 const mapDispatchToProps = dispatch => ({
-  toggleSidebar: () => dispatch(toggleSidebar())
+  // toggleSidebar: () => dispatch(toggleSidebar())
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Sidebar);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Sidebar)
+);

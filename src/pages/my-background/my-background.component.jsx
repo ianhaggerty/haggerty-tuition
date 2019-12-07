@@ -2,7 +2,7 @@ import React from "react";
 
 import { Article, Heading, Paragraph } from "../../components/article";
 
-const Background = () => (
+const MyBackground = () => (
   <React.Fragment>
     <Article style={{ gridCol: "col-left-start / col-right-end;" }}>
       <Heading>My Background</Heading>
@@ -24,4 +24,4 @@ const Background = () => (
   </React.Fragment>
 );
 
-export default Background;
+export default MyBackground;

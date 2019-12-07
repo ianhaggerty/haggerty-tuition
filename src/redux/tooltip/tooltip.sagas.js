@@ -12,8 +12,10 @@ import {
 import { setActive, setInactive } from "./tooltip.actions";
 import TooltipActionTypes from "./tooltip.types";
 
+const TOOL_TIP_DELAY = 1000;
+
 export function* setActiveTimer() {
-  yield delay(2000);
+  yield delay(TOOL_TIP_DELAY);
   yield put(setActive());
 }
 

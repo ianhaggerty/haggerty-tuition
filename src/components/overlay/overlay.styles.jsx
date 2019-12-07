@@ -7,6 +7,7 @@ export const StyledOverlay = styled.div`
   height: 100%;
 
   background-color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
 
   position: fixed;
   top: 0;
