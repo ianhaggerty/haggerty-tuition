@@ -1,51 +1,42 @@
 import React from "react";
-
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import { withRouter } from "react-router-dom";
-import qs from "query-string";
-
 import { CSSTransition } from "react-transition-group";
+
+import {
+  selectOverlay,
+  selectOverlayOpen,
+  selectSidebarOpen
+} from "../../redux/query-string/query-string.selectors";
+import { closeOverlay } from "../../redux/query-string/query-string.actions";
 
 import { StyledOverlay } from "./overlay.styles";
 
 class Overlay extends React.Component {
-  isOverlayVisible = () => {
-    const { location } = this.props;
-
-    const currentQuery = location.search;
-    const currentQueryParsed = qs.parse(currentQuery);
-    return !!currentQueryParsed.overlay;
-  };
-
-  closeOverlay = () => {
-    const { history, location } = this.props;
-
-    const currentQuery = location.search;
-    const currentQueryParsed = qs.parse(currentQuery);
-
-    const newQueryParsed = {
-      ...currentQueryParsed,
-      overlay: undefined
-    };
-
-    const newQuery = qs.stringify(newQueryParsed);
-    history.push({ search: newQuery });
-  };
-
   render() {
+    const { overlayOpen, closeOverlay, sidebarOpen } = this.props;
+
     return (
       <CSSTransition
-        in={this.isOverlayVisible()}
+        in={overlayOpen}
         classNames="fade"
         timeout={500}
         unmountOnExit
       >
-        <StyledOverlay {...this.props} onClick={this.closeOverlay} />
+        <StyledOverlay {...this.props} onClick={closeOverlay} />
       </CSSTransition>
     );
   }
 }
 
-const mapStateToProps = createStructuredSelector({});
-export default withRouter(connect(mapStateToProps)(Overlay));
+const mapStateToProps = createStructuredSelector({
+  overlay: selectOverlay,
+  overlayOpen: selectOverlayOpen,
+  sidebarOpen: selectSidebarOpen
+});
+
+const mapDispatchToProps = dispatch => ({
+  closeOverlay: () => dispatch(closeOverlay())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Overlay);

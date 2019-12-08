@@ -11,7 +11,7 @@ export const APP_HEIGHT = "92.8rem";
 
 export const SIDEBAR_WIDTH_CLOSED = "9rem";
 export const SIDEBAR_WIDTH_OPEN = "30rem";
-export const SIDEBAR_TRANSITION = ".5s ease";
+export const SIDEBAR_TRANSITION = `.5s ease`;
 export const SIDEBAR_ITEM_HEIGHT = "5.8rem";
 
 export const ICON_WIDTH = "3.8rem";
@@ -24,3 +24,5 @@ export const BOX_SHADOW_FLAT = "0 .6rem 1.5rem rgba(0, 0, 0, 0.2)";
 export const BOX_SHADOW_ELAVATED = "0 .8rem 2rem rgba(0, 0, 0, 0.2)";
 export const BOX_SHADOW_DEPRESSED = "0 .5rem 1.2rem rgba(0, 0, 0, 0.2)";
 export const BOX_SHADOW_DIFFUSE = "0 .5rem 5rem rgba(0, 0, 0, 0.15)";
+
+export const OVERLAY_Z_INDEX = 3000; // larger than sidebar

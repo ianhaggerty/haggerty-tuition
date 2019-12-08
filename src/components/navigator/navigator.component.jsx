@@ -2,7 +2,9 @@ import React from "react";
 
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+
 import { selectTooltipActive } from "../../redux/tooltip/tooltip.selectors";
+import { openEnquiryForm } from "../../redux/query-string/query-string.actions";
 
 import ButtonWithTooltip from "./navigator-button.component";
 import { StyledNavigator } from "./navigator.styles";
@@ -11,6 +13,7 @@ import { COLOR_PRIMARY, COLOR_GREY_LIGHT } from "../../styles/variables";
 
 class Navigator extends React.Component {
   render() {
+    const { openEnquiryForm } = this.props;
     return (
       <StyledNavigator>
         <ButtonWithTooltip
@@ -24,6 +27,7 @@ class Navigator extends React.Component {
           tooltip="Get in touch"
           icon="mail"
           active={true}
+          onClick={openEnquiryForm}
         />
         <ButtonWithTooltip
           backgroundColor={COLOR_GREY_LIGHT}
@@ -40,4 +44,8 @@ const mapStateToProps = createStructuredSelector({
   tooltipActive: selectTooltipActive
 });
 
-export default connect(mapStateToProps)(Navigator);
+const mapDispatchToProps = dispatch => ({
+  openEnquiryForm: () => dispatch(openEnquiryForm())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navigator);

@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import { SIDEBAR_TRANSITION } from "../../styles/variables";
-
 export const StyledOverlay = styled.div`
   width: 100%;
   height: 100%;
@@ -12,12 +10,12 @@ export const StyledOverlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 250;
 
   /* TODO - SVG Filter Polyfill? */
   backdrop-filter: blur(1rem);
 
-  transition: ${SIDEBAR_TRANSITION};
+  transition: 0.3s ease;
 
   &.fade-enter {
     opacity: 0;

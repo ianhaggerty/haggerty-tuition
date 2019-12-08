@@ -34,7 +34,7 @@ export const Wrapper = styled.nav`
   ${MIXIN_VERTICAL_CENTER_ABSOLUTE_SELF}
   left: 0;
 
-  z-index: 1000;
+  z-index: 200;
   overflow: hidden;
 
   display: flex;

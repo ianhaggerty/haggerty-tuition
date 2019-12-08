@@ -5,6 +5,7 @@ import { connectRouter } from "connected-react-router";
 import { createBrowserHistory } from "history";
 
 import tooltipReducer from "./tooltip/tooltip.reducer";
+import queryStringReducer from "./query-string/query-string.reducer";
 
 const persistConfig = {
   key: "root",
@@ -16,6 +17,7 @@ export const history = createBrowserHistory();
 
 export const rootReducer = combineReducers({
   tooltip: tooltipReducer,
+  queryString: queryStringReducer,
   router: connectRouter(history)
 });
 

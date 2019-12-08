@@ -2,7 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { withRouter } from "react-router-dom";
-import qs from "query-string";
+import delay from "delay";
+import {
+  openSideBar,
+  closeOverlay,
+  openEnquiryForm
+} from "../../redux/query-string/query-string.actions";
+import { selectSidebarOpen } from "../../redux/query-string/query-string.selectors";
 
 import {
   Wrapper,
@@ -17,38 +23,17 @@ import Icon from "../icon/icon.component";
 
 class Sidebar extends React.Component {
   toggleSidebar = () => {
-    const { history, location } = this.props;
+    const { openSidebar, closeSidebar, sidebarOpen } = this.props;
 
-    const currentQuery = location.search;
-    const currentQueryParsed = qs.parse(currentQuery);
-
-    let newQueryParsed;
-    if (currentQueryParsed.overlay === "sidebar") {
-      newQueryParsed = {
-        ...currentQueryParsed,
-        overlay: undefined
-      };
+    if (sidebarOpen) {
+      closeSidebar();
     } else {
-      newQueryParsed = {
-        ...currentQueryParsed,
-        overlay: "sidebar"
-      };
+      openSidebar();
     }
-
-    const newQuery = qs.stringify(newQueryParsed);
-    history.push({ search: newQuery });
-  };
-
-  isSidebarOpen = () => {
-    const { location } = this.props;
-
-    const currentQuery = location.search;
-    const currentQueryParsed = qs.parse(currentQuery);
-    return currentQueryParsed.overlay === "sidebar";
   };
 
   render() {
-    const sidebarOpen = this.isSidebarOpen();
+    const { sidebarOpen, openEnquiryForm } = this.props;
 
     return (
       <Wrapper sidebarOpen={sidebarOpen}>
@@ -74,7 +59,7 @@ class Sidebar extends React.Component {
             <Icon name="people" />
           </NavIcon>
         </SidebarItem>
-        <SidebarItem>
+        <SidebarItem onClick={openEnquiryForm}>
           <NavLabel>Get in touch</NavLabel>
           <NavIcon>
             <Icon name="mail" />
@@ -86,16 +71,15 @@ class Sidebar extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  // sidebarOpen: selectSidebarOpen
+  sidebarOpen: selectSidebarOpen
 });
 
 const mapDispatchToProps = dispatch => ({
-  // toggleSidebar: () => dispatch(toggleSidebar())
+  openSidebar: () => dispatch(openSideBar()),
+  closeSidebar: () => dispatch(closeOverlay()),
+  openEnquiryForm: () => dispatch(openEnquiryForm())
 });
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Sidebar)
+  connect(mapStateToProps, mapDispatchToProps)(Sidebar)
 );

@@ -42,3 +42,9 @@ export const MIXIN_FONT_CASLON_BOLD_ITALIC = css`
   font-weight: 600;
   font-style: italic;
 `;
+
+export const MIXIN_FONT_CASLON_ITALIC = css`
+  font-family: adobe-caslon-pro, serif;
+  font-weight: 400;
+  font-style: italic;
+`;
