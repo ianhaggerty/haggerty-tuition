@@ -10,7 +10,7 @@ export const StyledOverlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 250;
+  z-index: 150;
 
   /* TODO - SVG Filter Polyfill? */
   backdrop-filter: blur(1rem);
