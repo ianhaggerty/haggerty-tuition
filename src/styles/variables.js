@@ -5,6 +5,7 @@ export const COLOR_WHITE_PURE = "#FFFFFF";
 export const COLOR_WHITE_TINT = "#FAFAFA";
 export const COLOR_ACCENT = "#FFFC99";
 export const COLOR_PRIMARY = "#0097E6";
+export const COLOR_TRANSPARENT = "rgba(0,0,0,0)";
 
 export const APP_WIDTH = "130rem";
 export const APP_HEIGHT = "92.8rem";

@@ -2,7 +2,7 @@ import React from "react";
 
 import { BackgroundElement } from "./background.styles";
 
-import paper from "../../assets/photos/a4-paper.jpg";
+import paper from "../../assets/photos/compressed/a4-paper.jpg";
 
 const Background = props => {
   return (

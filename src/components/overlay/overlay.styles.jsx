@@ -4,13 +4,13 @@ export const StyledOverlay = styled.div`
   width: 100%;
   height: 100%;
 
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
 
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 150;
+  z-index: 250;
 
   /* TODO - SVG Filter Polyfill? */
   backdrop-filter: blur(1rem);

@@ -34,12 +34,14 @@ export const Wrapper = styled.nav`
   ${MIXIN_VERTICAL_CENTER_ABSOLUTE_SELF}
   left: 0;
 
-  z-index: 200;
+  z-index: 250;
   overflow: hidden;
 
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  cursor: pointer;
 `;
 
 export const HamburgerWrap = styled.div`
