@@ -21,8 +21,8 @@ export const EnquiryFormWrapper = styled.div`
   align-items: center;
   z-index: 300;
 
-  transform-origin: center center;
-  transition: all 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  transform-origin: bottom center;
+  transition: all 600ms ease;
 
   &.grow-enter {
     opacity: 0;
@@ -70,6 +70,37 @@ export const EnquiryFormCloseButton = styled.div`
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
+  cursor: pointer;
+`;
+
+export const EnquiryPageWrap = styled.main`
+  position: absolute;
+  top: 10rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: all 500ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition-delay: 500ms;
+  &.fade-enter,
+  &.fade-appear {
+    opacity: 0;
+  }
+
+  &.fade-enter-active,
+  &.fade-appear-active {
+    opacity: 1;
+  }
+
+  &.fade-exit {
+    opacity: 1;
+    transition-delay: 0ms;
+  }
+
+  &.fade-exit-active {
+    opacity: 0;
+  }
 `;
 
 export const EnquiryFormSubHeading = styled.h3`
@@ -84,6 +115,7 @@ export const EnquiryFormParagraph = styled.p`
   ${MIXIN_FONT_CASLON_ITALIC}
   color: ${COLOR_WHITE_PURE};
   text-align: center;
-  font-size: 2.4rem;
-  margin-top: 1.3rem;
+  font-size: 2.5rem;
+  margin-top: 1.9rem;
+  line-height: 3.5rem;
 `;

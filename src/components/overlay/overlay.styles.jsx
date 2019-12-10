@@ -15,7 +15,7 @@ export const StyledOverlay = styled.div`
   /* TODO - SVG Filter Polyfill? */
   backdrop-filter: blur(1rem);
 
-  transition: 0.3s ease;
+  transition: 0.6s ease;
 
   &.fade-enter {
     opacity: 0;

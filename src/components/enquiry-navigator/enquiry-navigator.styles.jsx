@@ -9,7 +9,9 @@ export const EnquiryNavigatorWrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 4rem;
+
+  position: absolute;
+  bottom: 4rem;
 `;
 
 export const PageIndicatorWrapper = styled.div`

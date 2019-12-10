@@ -2,33 +2,43 @@ import React from "react";
 
 import { COLOR_PRIMARY, COLOR_GREY_LIGHT } from "../../styles/variables";
 
-import ButtonWithTooltip from "../navigator/navigator-button.component";
+import Button from "../button/button.component";
+import ButtonIcon from "../button/button-icon.component";
 import {
   EnquiryNavigatorWrapper,
   PageIndicatorWrapper,
   PageIndicator
 } from "./enquiry-navigator.styles";
 
-const EnquiryNavigator = ({ currentPage, completedPage, pages }) => {
+const EnquiryNavigator = ({
+  currentPage,
+  completedPage,
+  pages,
+  onClickNext,
+  onClickPrevious
+}) => {
   return (
     <EnquiryNavigatorWrapper>
-      <ButtonWithTooltip
+      <Button
         backgroundColor={COLOR_GREY_LIGHT}
-        tooltip="Previous"
-        icon="arrow-round-back"
         active={false}
-      />
+        onClick={onClickPrevious}
+      >
+        <ButtonIcon name="arrow-round-back" />
+      </Button>
       <PageIndicatorWrapper>
         <PageIndicator active={true} available={true} />
         <PageIndicator available={true} />
         <PageIndicator available={false} />
       </PageIndicatorWrapper>
-      <ButtonWithTooltip
+      <Button
         backgroundColor={COLOR_PRIMARY}
-        tooltip="Next"
         icon="arrow-round-forward"
         active={true}
-      />
+        onClick={onClickNext}
+      >
+        <ButtonIcon name="arrow-round-forward" />
+      </Button>
     </EnquiryNavigatorWrapper>
   );
 };
