@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { SIDEBAR_WIDTH_CLOSED } from "../../styles/variables";
+
 export const TRANSITION_TIME = 100;
 
 export const StyledOverlay = styled.div`
@@ -20,6 +22,8 @@ export const StyledOverlay = styled.div`
 
   backdrop-filter: blur(1rem);
   transition: ${TRANSITION_TIME}ms ease;
+
+  padding-left: ${SIDEBAR_WIDTH_CLOSED};
 
   &.fade-enter {
     opacity: 0;

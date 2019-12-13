@@ -1,21 +1,14 @@
 import styled from "styled-components";
 
-import {
-  COLOR_GREY_DARK,
-  COLOR_WHITE_PURE,
-  COLOR_ACCENT
-} from "../../styles/variables";
-import {
-  MIXIN_FONT_CASLON_ITALIC,
-  MIXIN_FONT_CASLON_SEMIBOLD
-} from "../../styles/mixins.styles";
+import { COLOR_GREY_DARK, COLOR_WHITE_PURE } from "../../styles/variables";
+import { MIXIN_FONT_CASLON_ITALIC } from "../../styles/mixins.styles";
 
 export const EnquiryFormWrapper = styled.div`
   position: relative;
 
   background-color: ${COLOR_GREY_DARK};
-  width: 75rem;
-  height: 65rem;
+  width: 90rem;
+  height: 72rem;
 
   display: flex;
   flex-direction: column;
@@ -34,7 +27,7 @@ export const EnquiryFormHeader = styled.header`
 `;
 
 export const Line = styled.span`
-  width: 16rem;
+  width: 21rem;
   height: 0.1rem;
   background-color: ${COLOR_WHITE_PURE};
   margin: 0 2rem;
@@ -79,21 +72,4 @@ export const EnquiryPageWrap = styled.main`
   &.fade-exit-active {
     opacity: 0;
   }
-`;
-
-export const EnquiryFormSubHeading = styled.h3`
-  ${MIXIN_FONT_CASLON_SEMIBOLD}
-  color: ${COLOR_ACCENT};
-  font-size: 2.4rem;
-  letter-spacing: .1rem;
-  margin-top: 3rem;
-`;
-
-export const EnquiryFormParagraph = styled.p`
-  ${MIXIN_FONT_CASLON_ITALIC}
-  color: ${COLOR_WHITE_PURE};
-  text-align: center;
-  font-size: 2.5rem;
-  margin-top: 1.9rem;
-  line-height: 3.5rem;
 `;
