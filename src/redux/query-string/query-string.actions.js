@@ -8,6 +8,8 @@ export const setQueryParam = (key, value) => ({
   }
 });
 
-export const openSideBar = () => setQueryParam("overlay", "sidebar");
-export const openEnquiryForm = () => setQueryParam("overlay", "enquiry-form");
-export const closeOverlay = () => setQueryParam("overlay", undefined);
+export const openSideBar = () => setQueryParam("sidebar", "true");
+export const closeSidebar = () => setQueryParam("sidebar", undefined);
+
+export const openEnquiryForm = () => setQueryParam("enquiry-form", "true");
+export const closeEnquiryForm = () => setQueryParam("enquiry-form", undefined);

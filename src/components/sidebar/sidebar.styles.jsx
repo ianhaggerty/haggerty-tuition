@@ -50,7 +50,8 @@ export const HamburgerWrap = styled.div`
   cursor: pointer;
   margin-bottom: auto;
 
-  transition: 0.5s ease;
+  flex-grow: 1;
+  transition: ${SIDEBAR_TRANSITION};
 
   &:hover {
     background-color: ${COLOR_GREY_MEDIUM};

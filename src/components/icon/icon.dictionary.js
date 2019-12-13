@@ -4,6 +4,8 @@ import { ReactComponent as People } from "../../assets/icons/people.svg";
 import { ReactComponent as Mail } from "../../assets/icons/mail.svg";
 import { ReactComponent as Close } from "../../assets/icons/close.svg";
 
+import { ReactComponent as MapMarkerTick } from "../../assets/icons/map-marker-tick.svg";
+
 import { ReactComponent as ArrowRoundDown } from "../../assets/icons/arrow-round-down.svg";
 import { ReactComponent as ArrowRoundBack } from "../../assets/icons/arrow-round-back.svg";
 import { ReactComponent as ArrowRoundForward } from "../../assets/icons/arrow-round-forward.svg";
@@ -18,7 +20,8 @@ const iconDict = {
   arrowRoundDown: ArrowRoundDown,
   arrowRoundBack: ArrowRoundBack,
   arrowRoundForward: ArrowRoundForward,
-  arrowRoundUp: ArrowRoundUp
+  arrowRoundUp: ArrowRoundUp,
+  mapMarkerTick: MapMarkerTick
 };
 
 export default iconDict;

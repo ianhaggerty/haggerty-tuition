@@ -4,7 +4,7 @@ import { createStructuredSelector } from "reselect";
 import { withRouter } from "react-router-dom";
 import {
   openSideBar,
-  closeOverlay,
+  closeSidebar,
   openEnquiryForm
 } from "../../redux/query-string/query-string.actions";
 import { selectSidebarOpen } from "../../redux/query-string/query-string.selectors";
@@ -75,7 +75,7 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = dispatch => ({
   openSidebar: () => dispatch(openSideBar()),
-  closeSidebar: () => dispatch(closeOverlay()),
+  closeSidebar: () => dispatch(closeSidebar()),
   openEnquiryForm: () => dispatch(openEnquiryForm())
 });
 

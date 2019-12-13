@@ -3,7 +3,6 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 import { Window } from "./app.styles";
 
-import Overlay from "./components/overlay/overlay.component";
 import Sidebar from "./components/sidebar/sidebar.component";
 import Navigator from "./components/navigator/navigator.component";
 import Background from "./components/background/background.component";
@@ -29,8 +28,6 @@ const App = props => {
 
         <Navigator />
       </Window>
-
-      <Overlay />
     </React.Fragment>
   );
 };

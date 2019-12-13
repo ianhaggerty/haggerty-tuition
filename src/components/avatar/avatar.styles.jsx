@@ -23,7 +23,7 @@ export const Img = styled.img`
   ${MIXIN_SIZE}
 
   /* position: absolute; */
-  transition: 1s ease;
+  transition: 2s ease;
 
   ${Circle}:hover & {
     transform: scale(1.2);

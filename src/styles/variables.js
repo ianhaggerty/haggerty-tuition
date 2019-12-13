@@ -12,8 +12,8 @@ export const APP_HEIGHT = "92.8rem";
 
 export const SIDEBAR_WIDTH_CLOSED = "9rem";
 export const SIDEBAR_WIDTH_OPEN = "30rem";
-export const SIDEBAR_TRANSITION = `.5s ease`;
 export const SIDEBAR_ITEM_HEIGHT = "5.8rem";
+export const SIDEBAR_TRANSITION = `.3s ease`;
 
 export const ICON_WIDTH = "3.8rem";
 export const ICON_COLOR = COLOR_WHITE_TINT;

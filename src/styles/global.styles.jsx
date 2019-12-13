@@ -45,4 +45,8 @@ export const GlobalStyle = createGlobalStyle`
     padding-left: ${SIDEBAR_WIDTH_CLOSED};
     ${MIXIN_CENTER_FLEX_CHILDREN};
   }
+
+  a {
+    text-decoration: none
+  }
 `;
