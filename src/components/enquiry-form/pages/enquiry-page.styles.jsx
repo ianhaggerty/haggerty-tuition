@@ -1,14 +1,15 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { COLOR_WHITE_PURE, COLOR_ACCENT } from "../../../styles/variables";
 import {
+  MIXIN_FONT_CASLON_NORMAL,
   MIXIN_FONT_CASLON_ITALIC,
   MIXIN_FONT_CASLON_SEMIBOLD
 } from "../../../styles/mixins.styles";
 
 export const EnquiryPageWrap = styled.main`
   position: absolute;
-  top: 11rem;
+  top: 0rem;
 
   display: flex;
   flex-direction: column;
@@ -37,7 +38,7 @@ export const EnquiryPageWrap = styled.main`
   }
 `;
 
-export const EnquiryFormSubHeading = styled.h3`
+export const subHeadingFontStyles = css`
   ${MIXIN_FONT_CASLON_SEMIBOLD}
   color: ${COLOR_ACCENT};
   font-size: 2.7rem;
@@ -45,12 +46,62 @@ export const EnquiryFormSubHeading = styled.h3`
   margin-top: 1.7rem;
 `;
 
-export const EnquiryFormParagraph = styled.p`
+export const EnquiryFormSubHeading = styled.h3`
+  ${subHeadingFontStyles}
+`;
+
+export const messageFontStyles = css`
   ${MIXIN_FONT_CASLON_ITALIC}
-  color: ${COLOR_WHITE_PURE};
-  text-align: center;
   font-size: 2.7rem;
   margin-top: 2rem;
   line-height: 3.5rem;
+`;
+
+export const EnquiryFormMessage = styled.p`
+ ${messageFontStyles}
+  color: ${COLOR_WHITE_PURE};
+`;
+
+export const EnquiryFormParagraph = styled.p`
+ ${MIXIN_FONT_CASLON_NORMAL}
+  color: ${COLOR_WHITE_PURE};
+  font-size: 2.5rem;
+  line-height: 3.3rem;
+  margin-top: 2rem;
+`;
+
+export const EnquiryFormHighlight = styled.i`
+  ${messageFontStyles}
+  color: ${COLOR_ACCENT}
+`;
+
+export const EnquiryFormSignature = styled.h3`
+  ${MIXIN_FONT_CASLON_NORMAL}
+  color: ${COLOR_ACCENT};
+  font-size: 2.7rem;
   letter-spacing: .0rem;
+  margin-top: 1.7rem;
+`;
+
+export const headerFontStyles = css`
+  ${MIXIN_FONT_CASLON_ITALIC}
+  color: ${COLOR_WHITE_PURE};
+  font-size: 3.5rem;
+  letter-spacing: .3rem;
+`;
+export const EnquiryFormHeader = styled.header`
+  ${headerFontStyles}
+  width: 100%;
+  text-align: center;
+  margin-top: 4rem;
+`;
+
+export const EnquiryFormHeaderLine = styled.span`
+  width: 21rem;
+  height: 0.1rem;
+  background-color: ${COLOR_WHITE_PURE};
+  margin: 0 2rem;
+  display: inline-block;
+  position: relative;
+  bottom: 1rem;
 `;

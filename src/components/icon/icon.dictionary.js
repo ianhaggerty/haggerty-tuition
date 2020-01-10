@@ -11,6 +11,14 @@ import { ReactComponent as ArrowRoundBack } from "../../assets/icons/arrow-round
 import { ReactComponent as ArrowRoundForward } from "../../assets/icons/arrow-round-forward.svg";
 import { ReactComponent as ArrowRoundUp } from "../../assets/icons/arrow-round-up.svg";
 
+import { ReactComponent as DiscountTwoStudent } from "../../assets/icons/discount_two-student.svg";
+import { ReactComponent as DiscountFirstHour } from "../../assets/icons/discount_first-hour.svg";
+import { ReactComponent as DiscountDoubleLesson } from "../../assets/icons/discount_double-lesson.svg";
+import { ReactComponent as DiscountTravelToMe } from "../../assets/icons/discount_travel-to-me.svg";
+
+import { ReactComponent as CheckedBox } from "../../assets/icons/checked-box.svg";
+import { ReactComponent as UnCheckedBox } from "../../assets/icons/unchecked-box.svg";
+
 const iconDict = {
   person: Person,
   medal: Medal,
@@ -21,7 +29,13 @@ const iconDict = {
   arrowRoundBack: ArrowRoundBack,
   arrowRoundForward: ArrowRoundForward,
   arrowRoundUp: ArrowRoundUp,
-  mapMarkerTick: MapMarkerTick
+  mapMarkerTick: MapMarkerTick,
+  discountTwoStudent: DiscountTwoStudent,
+  discountFirstHour: DiscountFirstHour,
+  discountDoubleLesson: DiscountDoubleLesson,
+  discountTravelToMe: DiscountTravelToMe,
+  checkedBox: CheckedBox,
+  uncheckedBox: UnCheckedBox
 };
 
 export default iconDict;

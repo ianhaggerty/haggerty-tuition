@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { MIXIN_FONT_MUSEO_BOLD } from "../../styles/mixins.styles";
 
 export const StyledButtonInline = styled.span`
-  ${MIXIN_FONT_MUSEO_BOLD}
+  /* ${MIXIN_FONT_MUSEO_BOLD} */
   color: ${props => props.color};
+  font-weight: 500;
 
   cursor: pointer;
 

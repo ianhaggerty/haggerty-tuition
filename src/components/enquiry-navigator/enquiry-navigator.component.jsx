@@ -10,19 +10,13 @@ import {
   PageIndicator
 } from "./enquiry-navigator.styles";
 
-const EnquiryNavigator = ({
-  currentPage,
-  completedPage,
-  pages,
-  onClickNext,
-  onClickPrevious
-}) => {
+const EnquiryNavigator = ({ nextLabel, previousLabel, nextAvailable }) => {
   return (
     <EnquiryNavigatorWrapper>
       <Button
         backgroundColor={COLOR_GREY_LIGHT}
         active={false}
-        onClick={onClickPrevious}
+        // onClick={previous}
       >
         <ButtonIcon name="arrow-round-back" />
       </Button>
@@ -35,7 +29,7 @@ const EnquiryNavigator = ({
         backgroundColor={COLOR_PRIMARY}
         icon="arrow-round-forward"
         active={true}
-        onClick={onClickNext}
+        // onClick={next}
       >
         <ButtonIcon name="arrow-round-forward" />
       </Button>

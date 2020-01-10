@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { SIDEBAR_WIDTH_CLOSED } from "../../styles/variables";
 
-export const TRANSITION_TIME = 100;
+export const TRANSITION_TIME = 200;
 
 export const StyledOverlay = styled.div`
   width: 100%;
@@ -18,10 +18,10 @@ export const StyledOverlay = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.6);
 
   backdrop-filter: blur(1rem);
-  transition: ${TRANSITION_TIME}ms ease;
+  transition: opacity ${TRANSITION_TIME}ms ease;
 
   padding-left: ${SIDEBAR_WIDTH_CLOSED};
 

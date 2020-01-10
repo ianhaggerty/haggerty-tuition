@@ -3,40 +3,36 @@ import { connect } from "react-redux";
 import { CSSTransition } from "react-transition-group";
 
 import {
-  EnquiryPageWrap,
   EnquiryFormSubHeading,
-  EnquiryFormParagraph
+  EnquiryFormMessage,
+  EnquiryFormSignature
 } from "./enquiry-page.styles";
 
-const EnquiryPageWelcome = props => (
-  <CSSTransition in={true} classNames="fade" timeout={500} unmountOnExit>
-    <EnquiryPageWrap>
-      <EnquiryFormSubHeading>Greetings!</EnquiryFormSubHeading>
-      <EnquiryFormParagraph>
-        Thank you for your interest in tuition.
-      </EnquiryFormParagraph>
-      <EnquiryFormParagraph>
-        I warmly invite correspondence
-        <br />
-        from all potential clients.
-      </EnquiryFormParagraph>
-      <EnquiryFormParagraph>
-        Please take a moment to review my
-        <br />
-        pricing & travel details.
-      </EnquiryFormParagraph>
-      <EnquiryFormParagraph>
-        After which,
-        <br />
-        you're welcome to make an enquiry.
-      </EnquiryFormParagraph>
-      <EnquiryFormParagraph>
-        Many thanks,
-        <br />
-        Ian
-      </EnquiryFormParagraph>
-    </EnquiryPageWrap>
-  </CSSTransition>
+import { WelcomePageWrap } from "./enquiry-page.welcome.styles";
+
+const EnquiryPageWelcome = () => (
+  <WelcomePageWrap>
+    <EnquiryFormSubHeading>Welcome</EnquiryFormSubHeading>
+    <EnquiryFormMessage>
+      Thank you for your interest in tuition.
+    </EnquiryFormMessage>
+    <EnquiryFormMessage>
+      I warmly invite correspondence
+      <br />
+      from all potential clients.
+    </EnquiryFormMessage>
+    <EnquiryFormMessage>
+      Please take a moment to review my
+      <br />
+      pricing & travel details.
+    </EnquiryFormMessage>
+    <EnquiryFormMessage>
+      After which,
+      <br />
+      you're welcome to make an enquiry.
+    </EnquiryFormMessage>
+    <EnquiryFormSignature>Ian</EnquiryFormSignature>
+  </WelcomePageWrap>
 );
 
 export default connect()(EnquiryPageWelcome);

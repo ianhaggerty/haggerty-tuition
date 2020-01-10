@@ -15,27 +15,6 @@ export const EnquiryFormWrapper = styled.div`
   align-items: center;
 `;
 
-export const EnquiryFormHeader = styled.header`
-  width: 100%;
-  ${MIXIN_FONT_CASLON_ITALIC}
-
-  color: ${COLOR_WHITE_PURE};
-  text-align: center;
-  font-size: 3.5rem;
-  letter-spacing: .3rem;
-  margin-top: 4rem;
-`;
-
-export const Line = styled.span`
-  width: 21rem;
-  height: 0.1rem;
-  background-color: ${COLOR_WHITE_PURE};
-  margin: 0 2rem;
-  display: inline-block;
-  position: relative;
-  bottom: 1rem;
-`;
-
 export const EnquiryFormCloseButton = styled.div`
   position: absolute;
   top: 1.5rem;

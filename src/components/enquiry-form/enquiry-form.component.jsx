@@ -10,12 +10,18 @@ import EnquiryNavigator from "../enquiry-navigator/enquiry-navigator.component";
 import Icon from "../../components/icon/icon.component";
 
 import EnquiryPageWelcome from "./pages/enquiry-page.welcome.component";
+import EnquiryPageTravel from "./pages/enquiry-page.travel.component";
+import EnquiryPagePricing from "./pages/enquiry-page.pricing.component";
+import EnquiryPageDiscounts from "./pages/enquiry-page.discounts.component";
+import EnquiryPageInterlude from "./pages/enquiry-page.interlude.component";
+import EnquiryPageContact from "./pages/enquiry-page.contact.component";
+import EnquiryPageLocation from "./pages/enquiry-page.location.component";
+import EnquiryPageDetails from "./pages/enquiry-page.details.component";
+import EnquiryPageThankyou from "./pages/enquiry-page.thankyou.component";
 
 import {
   EnquiryFormWrapper,
-  EnquiryFormHeader,
-  EnquiryFormCloseButton,
-  Line
+  EnquiryFormCloseButton
 } from "./enquiry-form.styles";
 
 class EnquiryForm extends React.Component {
@@ -27,12 +33,15 @@ class EnquiryForm extends React.Component {
         <EnquiryFormCloseButton onClick={closeEnquiryForm}>
           <Icon name="close" color="white" />
         </EnquiryFormCloseButton>
-        <EnquiryFormHeader>
-          <Line />
-          Enquiries
-          <Line />
-        </EnquiryFormHeader>
         <EnquiryPageWelcome />
+        {/* <EnquiryPageTravel /> */}
+        {/* <EnquiryPagePricing /> */}
+        {/* <EnquiryPageDiscounts /> */}
+        {/* <EnquiryPageInterlude /> */}
+        {/* <EnquiryPageContact /> */}
+        {/* <EnquiryPageLocation /> */}
+        {/* <EnquiryPageDetails /> */}
+        {/* <EnquiryPageThankyou /> */}
         <EnquiryNavigator
           onClickNext={this.nextPage}
           onClickPrevious={this.prevPage}
