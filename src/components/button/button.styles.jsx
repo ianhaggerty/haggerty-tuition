@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import {
   MIXIN_CENTER_FLEX_CHILDREN,
@@ -12,9 +12,22 @@ import {
   BOX_SHADOW_DEPRESSED
 } from "../../styles/variables";
 
+const activeStyles = css`
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: ${BOX_SHADOW_ELAVATED};
+  }
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: ${BOX_SHADOW_DEPRESSED};
+  }
+`;
+
 export const StyledButton = styled.button`
   background-color: ${props => props.backgroundColor};
   border-radius: calc(${props => props.size} / 2);
+  outline: none;
 
   ${MIXIN_CENTER_FLEX_CHILDREN}
   ${MIXIN_FONT_MUSEO_BOLD}
@@ -39,13 +52,5 @@ export const StyledButton = styled.button`
 
   transform-origin: bottom;
 
-  &:hover.active {
-    transform: scale(1.03);
-    box-shadow: ${BOX_SHADOW_ELAVATED};
-  }
-
-  &:active.active {
-    transform: scale(0.98);
-    box-shadow: ${BOX_SHADOW_DEPRESSED};
-  }
+  ${props => (props.active ? activeStyles : null)}
 `;

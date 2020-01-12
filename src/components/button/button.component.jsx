@@ -4,9 +4,7 @@ import PropTypes from "prop-types";
 import { StyledButton } from "./button.styles";
 import { SIDEBAR_ITEM_HEIGHT, COLOR_PRIMARY } from "../../styles/variables";
 
-const Button = props => (
-  <StyledButton {...props} className={props.active ? "active" : "inactive"} />
-);
+const Button = props => <StyledButton {...props} />;
 
 Button.defaultProps = {
   backgroundColor: COLOR_PRIMARY,

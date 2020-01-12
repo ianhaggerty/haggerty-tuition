@@ -2,7 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
-import { selectEnquiryFormOpen } from "../../redux/query-string/query-string.selectors";
+import {
+  selectEnquiryPageOpen,
+  selectCurrentEnquiryPage
+} from "../../redux/query-string/query-string.selectors";
 import { closeEnquiryForm } from "../../redux/query-string/query-string.actions";
 
 import withOverlay from "../with-overlay/with-overlay";
@@ -25,6 +28,33 @@ import {
 } from "./enquiry-form.styles";
 
 class EnquiryForm extends React.Component {
+  getPage() {
+    const { query } = this.props;
+
+    switch (query) {
+      case "welcome":
+        return <EnquiryPageWelcome />;
+      case "travel":
+        return <EnquiryPageTravel />;
+      case "pricing":
+        return <EnquiryPagePricing />;
+      case "discounts":
+        return <EnquiryPageDiscounts />;
+      case "interlude":
+        return <EnquiryPageInterlude />;
+      case "contact":
+        return <EnquiryPageContact />;
+      case "location":
+        return <EnquiryPageLocation />;
+      case "details":
+        return <EnquiryPageDetails />;
+      case "thank-you":
+        return <EnquiryPageThankyou />;
+      default:
+        return null;
+    }
+  }
+
   render() {
     const { closeEnquiryForm } = this.props;
 
@@ -33,15 +63,7 @@ class EnquiryForm extends React.Component {
         <EnquiryFormCloseButton onClick={closeEnquiryForm}>
           <Icon name="close" color="white" />
         </EnquiryFormCloseButton>
-        <EnquiryPageWelcome />
-        {/* <EnquiryPageTravel /> */}
-        {/* <EnquiryPagePricing /> */}
-        {/* <EnquiryPageDiscounts /> */}
-        {/* <EnquiryPageInterlude /> */}
-        {/* <EnquiryPageContact /> */}
-        {/* <EnquiryPageLocation /> */}
-        {/* <EnquiryPageDetails /> */}
-        {/* <EnquiryPageThankyou /> */}
+        {this.getPage()}
         <EnquiryNavigator
           onClickNext={this.nextPage}
           onClickPrevious={this.prevPage}
@@ -54,7 +76,8 @@ class EnquiryForm extends React.Component {
 const EnquiryFormWithOverlay = withOverlay(EnquiryForm);
 
 const mapStateToProps = createStructuredSelector({
-  visible: selectEnquiryFormOpen
+  visible: selectEnquiryPageOpen,
+  query: selectCurrentEnquiryPage
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -11,5 +11,5 @@ export const setQueryParam = (key, value) => ({
 export const openSideBar = () => setQueryParam("sidebar", "true");
 export const closeSidebar = () => setQueryParam("sidebar", undefined);
 
-export const openEnquiryForm = () => setQueryParam("enquiry-form", "true");
-export const closeEnquiryForm = () => setQueryParam("enquiry-form", undefined);
+export const openEnquiryForm = () => setQueryParam("enquiry-page", "true");
+export const closeEnquiryForm = () => setQueryParam("enquiry-page", undefined);

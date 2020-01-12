@@ -1,5 +1,6 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
+import withEnquiryPageLifecycle from "../withEnquiryPageLifecycle";
 
 import { FormPageWrap } from "./enquiry-page.form.styles";
 
@@ -65,5 +66,5 @@ const EnquiryPageDetails = () => (
 );
 
 export default reduxForm({ form: "details", destroyOnUnmount: false })(
-  EnquiryPageDetails
+  withEnquiryPageLifecycle("details")(EnquiryPageDetails)
 );

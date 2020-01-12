@@ -7,6 +7,7 @@ import { reducer as formReducer } from "redux-form";
 
 import tooltipReducer from "./tooltip/tooltip.reducer";
 import queryStringReducer from "./query-string/query-string.reducer";
+import enquiryPageReducer from "./enquiry-page/enquiry-page.reducer";
 
 const persistConfig = {
   key: "root",
@@ -20,7 +21,8 @@ export const rootReducer = combineReducers({
   tooltip: tooltipReducer,
   queryString: queryStringReducer,
   router: connectRouter(history),
-  form: formReducer
+  form: formReducer,
+  enquiryPage: enquiryPageReducer
 });
 
 export default persistReducer(persistConfig, rootReducer);

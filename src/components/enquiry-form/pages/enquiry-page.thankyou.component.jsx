@@ -1,4 +1,5 @@
 import React from "react";
+import withEnquiryPageLifecycle from "../withEnquiryPageLifecycle";
 
 import { Wrap } from "./enquiry-page.thankyou.styles";
 import {
@@ -13,4 +14,4 @@ const EnquiryPageThankyou = () => (
   </Wrap>
 );
 
-export default EnquiryPageThankyou;
+export default withEnquiryPageLifecycle("thank-you")(EnquiryPageThankyou);

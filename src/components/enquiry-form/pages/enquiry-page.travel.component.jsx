@@ -1,6 +1,6 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
-
+import withEnquiryPageLifecycle from "../withEnquiryPageLifecycle";
 import MapMarker from "../../map-marker/map-marker.component";
 
 import {
@@ -70,4 +70,4 @@ const EnquiryPageTravel = () => (
   </EnquiryPageWrap>
 );
 
-export default EnquiryPageTravel;
+export default withEnquiryPageLifecycle("travel")(EnquiryPageTravel);

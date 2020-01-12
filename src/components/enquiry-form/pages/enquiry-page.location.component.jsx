@@ -1,5 +1,6 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
+import withEnquiryPageLifecycle from "../withEnquiryPageLifecycle";
 
 import { COLOR_SECONDARY } from "../../../styles/variables";
 
@@ -112,4 +113,4 @@ const EnquiryPageLocation = () => (
 export default reduxForm({
   form: "location",
   destroyOnUnmount: false
-})(EnquiryPageLocation);
+})(withEnquiryPageLifecycle("location")(EnquiryPageLocation));

@@ -1,4 +1,5 @@
 import React from "react";
+import withEnquiryPageLifecycle from "../withEnquiryPageLifecycle";
 
 import {
   EnquiryFormSubHeading,
@@ -27,4 +28,4 @@ const EnquiryPageInterlude = () => (
   </InterludePageWrap>
 );
 
-export default EnquiryPageInterlude;
+export default withEnquiryPageLifecycle("interlude")(EnquiryPageInterlude);

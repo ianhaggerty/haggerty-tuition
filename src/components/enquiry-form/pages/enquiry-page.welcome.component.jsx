@@ -1,6 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
-import { CSSTransition } from "react-transition-group";
+import withEnquiryPageLifecycle from "../withEnquiryPageLifecycle";
 
 import {
   EnquiryFormSubHeading,
@@ -35,4 +34,4 @@ const EnquiryPageWelcome = () => (
   </WelcomePageWrap>
 );
 
-export default connect()(EnquiryPageWelcome);
+export default withEnquiryPageLifecycle("welcome")(EnquiryPageWelcome);

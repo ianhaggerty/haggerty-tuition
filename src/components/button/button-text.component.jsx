@@ -8,8 +8,12 @@ const StyledText = styled.span`
   }
 
   &:not(:only-child):first-child {
-    padding-left: 1.5rem;
+    padding-left: 2.2rem;
     padding-right: 1rem;
+  }
+
+  &:not(:only-child):first-child ~ * {
+    margin-right: 1.1rem !important;
   }
 `;
 

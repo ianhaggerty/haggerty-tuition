@@ -1,4 +1,5 @@
 import React from "react";
+import withEnquiryPageLifecycle from "../withEnquiryPageLifecycle";
 
 import { PricingPageWrap, PricingTable } from "./enquiry-page.pricing.styles";
 import ButtonInline from "../../button-inline/button-inline.component";
@@ -63,4 +64,4 @@ const EnquiryPagePricing = () => (
   </PricingPageWrap>
 );
 
-export default EnquiryPagePricing;
+export default withEnquiryPageLifecycle("pricing")(EnquiryPagePricing);

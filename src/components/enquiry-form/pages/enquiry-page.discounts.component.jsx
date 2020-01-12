@@ -1,5 +1,6 @@
 import React from "react";
 import Icon from "../../icon/icon.component";
+import withEnquiryPageLifecycle from "../withEnquiryPageLifecycle";
 import {
   DiscountsPageWrap,
   DiscountsGrid,
@@ -76,4 +77,4 @@ const EnquiryPageDiscounts = () => (
   </DiscountsPageWrap>
 );
 
-export default EnquiryPageDiscounts;
+export default withEnquiryPageLifecycle("discounts")(EnquiryPageDiscounts);
