@@ -2,12 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { withRouter } from "react-router-dom";
-import {
-  openSideBar,
-  closeSidebar,
-  openEnquiryForm
-} from "../../redux/query-string/query-string.actions";
-import { selectSidebarOpen } from "../../redux/query-string/query-string.selectors";
+import { closeSidebar, openSidebar } from "../../redux/sidebar/sidebar.actions";
+import { openEnquiryPage } from "../../redux/enquiry-page/enquiry-page.actions";
+import { selectSidebarOpen } from "../../redux/sidebar/sidebar.selectors";
 
 import {
   Wrapper,
@@ -74,9 +71,9 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = dispatch => ({
-  openSidebar: () => dispatch(openSideBar()),
+  openSidebar: () => dispatch(openSidebar()),
   closeSidebar: () => dispatch(closeSidebar()),
-  openEnquiryForm: () => dispatch(openEnquiryForm())
+  openEnquiryForm: () => dispatch(openEnquiryPage())
 });
 
 export default withRouter(

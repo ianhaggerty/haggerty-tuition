@@ -1,5 +1,5 @@
 import React from "react";
-import withEnquiryPageLifecycle from "../withEnquiryPageLifecycle";
+import withEnquiryPageLifecycle from "../wrapEnquiryPage";
 
 import { Wrap } from "./enquiry-page.thankyou.styles";
 import {

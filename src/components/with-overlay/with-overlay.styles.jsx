@@ -21,7 +21,8 @@ export const StyledOverlay = styled.div`
   background-color: rgba(255, 255, 255, 0.6);
 
   backdrop-filter: blur(1rem);
-  transition: opacity ${TRANSITION_TIME}ms ease;
+  /* transition: opacity ${TRANSITION_TIME}ms ease; */
+  transition: all 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
 
   padding-left: ${SIDEBAR_WIDTH_CLOSED};
 

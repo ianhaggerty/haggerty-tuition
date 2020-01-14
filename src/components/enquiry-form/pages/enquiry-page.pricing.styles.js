@@ -14,7 +14,7 @@ export const PricingTable = styled.table`
   font-size: 3rem;
   margin: 4rem 3rem;
 
-  thead {
+  tr:first-child {
     th:first-child {
       ${subHeadingFontStyles}
     }

@@ -22,3 +22,11 @@ export const nextEnquiryPage = () => ({
 export const prevEnquiryPage = () => ({
   type: enquiryPageActionTypes.ENQUIRY_PAGE_PREV
 });
+
+export const openEnquiryPage = () => ({
+  type: enquiryPageActionTypes.ENQUIRY_PAGE_OPEN
+});
+
+export const closeEnquiryPage = () => ({
+  type: enquiryPageActionTypes.ENQUIRY_PAGE_CLOSE
+});

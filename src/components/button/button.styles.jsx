@@ -45,9 +45,9 @@ export const StyledButton = styled.button`
 
   z-index: 100;
 
-  &,
-  & > * {
+  & {
     transition: 0.2s ease;
+    transition-property: scale box-shadow;
   }
 
   transform-origin: bottom;

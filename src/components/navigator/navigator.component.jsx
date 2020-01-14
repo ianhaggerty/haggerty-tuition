@@ -4,9 +4,8 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import { selectTooltipActive } from "../../redux/tooltip/tooltip.selectors";
-import { openEnquiryForm } from "../../redux/query-string/query-string.actions";
+import { openEnquiryPage } from "../../redux/enquiry-page/enquiry-page.actions";
 
-import { Button, ButtonIcon, ButtonText } from "../button";
 import ButtonWithTooltip from "./navigator-button.component";
 import { StyledNavigator } from "./navigator.styles";
 
@@ -46,7 +45,7 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = dispatch => ({
-  openEnquiryForm: () => dispatch(openEnquiryForm())
+  openEnquiryForm: () => dispatch(openEnquiryPage())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navigator);

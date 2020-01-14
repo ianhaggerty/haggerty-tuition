@@ -5,5 +5,5 @@ export const WelcomePageWrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 90%;
+  height: 66rem;
 `;

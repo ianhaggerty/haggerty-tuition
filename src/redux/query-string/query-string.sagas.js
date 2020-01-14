@@ -13,7 +13,7 @@ export function setQueryString(action) {
 }
 
 export function* onSetQueryParam() {
-  yield takeEvery(QueryStringActionTypes.SET_QUERY_STRING, setQueryString);
+  yield takeEvery(QueryStringActionTypes.SET_QUERY_PARAM, setQueryString);
 }
 
 export function* queryParamSagas() {

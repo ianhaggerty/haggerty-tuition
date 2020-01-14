@@ -11,12 +11,10 @@ export const EnquiryPageWrap = styled.main`
   position: absolute;
   top: 0rem;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  transition: all 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition-delay: 300ms;
 
-  transition: all 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
-  transition-delay: 250ms;
+  /* transition: 400ms linear; */
 
   &.fade-enter,
   &.fade-appear {

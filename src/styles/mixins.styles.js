@@ -54,3 +54,23 @@ export const MIXIN_FONT_CASLON_SEMIBOLD = css`
   font-weight: 600;
   font-style: normal;
 `;
+
+export const MIXIN_TRANSITION_FADE = css`
+  transition: opacity 200ms ease;
+
+  &.fade-enter {
+    opacity: 0;
+  }
+
+  &.fade-enter-active {
+    opacity: 1;
+  }
+
+  &.fade-exit {
+    opacity: 1;
+  }
+
+  &.fade-exit-active {
+    opacity: 0;
+  }
+`;

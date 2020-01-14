@@ -1,6 +1,7 @@
 import EnquiryPageActionTypes from "./enquiry-page.types";
 
 const INITIAL_STATE = {
+  lastVisited: "welcome",
   visited: [],
   invalid: []
 };
@@ -17,6 +18,7 @@ const EnquiryPageReducer = (state = INITIAL_STATE, action) => {
     case EnquiryPageActionTypes.ENQUIRY_PAGE_SET_VISITED:
       return {
         ...state,
+        lastVisited: action.payload,
         visited: addToArray(action.payload, state.visited)
       };
     case EnquiryPageActionTypes.ENQUIRY_PAGE_SET_VALID:

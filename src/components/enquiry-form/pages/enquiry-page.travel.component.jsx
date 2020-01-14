@@ -1,6 +1,6 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
-import withEnquiryPageLifecycle from "../withEnquiryPageLifecycle";
+import withEnquiryPageLifecycle from "../wrapEnquiryPage";
 import MapMarker from "../../map-marker/map-marker.component";
 
 import {
@@ -52,6 +52,7 @@ const EnquiryPageTravel = () => (
       </TravelPageColLeft>
       <TravelPageColRight>
         <div style={{ height: MAP_HEIGHT, width: MAP_WIDTH }}>
+          {/* TODO: Restrict key to haggertytuition.com */}
           <GoogleMapReact
             bootstrapURLKeys={{
               key: "AIzaSyDdQfLu-xhHTi4LvXnW3w-t_fgnb6cUChI"

@@ -11,7 +11,7 @@ export const EnquiryNavigatorWrapper = styled.nav`
   justify-content: space-between;
 
   position: absolute;
-  bottom: 7rem;
+  bottom: 6.5rem;
   height: 1.5rem;
 `;
 

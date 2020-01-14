@@ -3,6 +3,7 @@ const enquiryPageMap = [
   "travel",
   "pricing",
   "discounts",
+  // "interlude",
   "contact",
   "location",
   "details",
