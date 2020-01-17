@@ -14,8 +14,6 @@ export const EnquiryPageWrap = styled.main`
   transition: all 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
   transition-delay: 300ms;
 
-  /* transition: 400ms linear; */
-
   &.fade-enter,
   &.fade-appear {
     opacity: 0;

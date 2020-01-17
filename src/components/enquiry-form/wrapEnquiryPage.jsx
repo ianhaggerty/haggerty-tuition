@@ -5,12 +5,12 @@ import { selectCurrentEnquiryPage } from "../../redux/enquiry-page/enquiry-page.
 import { createStructuredSelector } from "reselect";
 import { CSSTransition } from "react-transition-group";
 import styled from "styled-components";
-import { MIXIN_TRANSITION_FADE } from "../../styles/mixins.styles";
+import { fadeTransition } from "../../styles/transitions";
 
 const wrapEnquiryPage = name => {
   return Component => {
     const StyledComponent = styled(Component)`
-      ${MIXIN_TRANSITION_FADE}
+      ${fadeTransition()}
     `;
 
     class ComponentWithLifeCycle extends React.Component {

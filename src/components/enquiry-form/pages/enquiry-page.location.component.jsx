@@ -70,7 +70,6 @@ const EnquiryPageLocation = () => (
             component="input"
             id="to-student"
             value="to-student"
-            checked
           />
           <RadioIconWrap htmlFor="to-student">
             <Icon name="uncheckedBox" color={COLOR_SECONDARY} />
@@ -118,5 +117,14 @@ const EnquiryPageLocation = () => (
 
 export default reduxForm({
   form: "location",
-  destroyOnUnmount: false
+  destroyOnUnmount: false,
+  validate: values => {
+    const errors = {};
+
+    if (!values.travel) {
+      errors.travel = "Required";
+    }
+
+    return errors;
+  }
 })(withEnquiryPageLifecycle("location")(EnquiryPageLocation));

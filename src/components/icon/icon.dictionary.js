@@ -19,6 +19,9 @@ import { ReactComponent as DiscountTravelToMe } from "../../assets/icons/discoun
 import { ReactComponent as CheckedBox } from "../../assets/icons/checked-box.svg";
 import { ReactComponent as UnCheckedBox } from "../../assets/icons/unchecked-box.svg";
 
+import { ReactComponent as Send } from "../../assets/icons/send.svg";
+import { ReactComponent as Load } from "../../assets/icons/load.svg";
+
 const iconDict = {
   person: Person,
   medal: Medal,
@@ -35,7 +38,9 @@ const iconDict = {
   discountDoubleLesson: DiscountDoubleLesson,
   discountTravelToMe: DiscountTravelToMe,
   checkedBox: CheckedBox,
-  uncheckedBox: UnCheckedBox
+  uncheckedBox: UnCheckedBox,
+  send: Send,
+  load: Load
 };
 
 export default iconDict;

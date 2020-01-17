@@ -70,6 +70,16 @@ const EnquiryPageDetails = () => (
   </EnquiryPageWrap>
 );
 
-export default reduxForm({ form: "details", destroyOnUnmount: false })(
-  withEnquiryPageLifecycle("details")(EnquiryPageDetails)
-);
+export default reduxForm({
+  form: "details",
+  destroyOnUnmount: false,
+  validate: values => {
+    const errors = {};
+
+    if (!values.details || values.details.length <= 9) {
+      errors.details = "Must be at least 10 characters";
+    }
+
+    return errors;
+  }
+})(withEnquiryPageLifecycle("details")(EnquiryPageDetails));

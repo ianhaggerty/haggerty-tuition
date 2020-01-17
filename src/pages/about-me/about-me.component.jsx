@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import styled from "styled-components";
 import { COLOR_GREY_LIGHT } from "../../styles/variables";
@@ -8,6 +9,8 @@ import Avatar from "../../components/avatar/avatar.component";
 import { Article, Heading, Paragraph } from "../../components/article";
 import ButtonInline from "../../components/button-inline/button-inline.component";
 import LogoType from "../../components/logo-type/logo-type.component";
+
+import { openEnquiryPage } from "../../redux/enquiry-page/enquiry-page.actions";
 
 const StyledLogoType = styled(LogoType)`
   grid-column: col-left-start / col-right-end;
@@ -25,7 +28,7 @@ const StyledAvatar = styled(Avatar)`
   margin-top: 3.5rem;
 `;
 
-const AboutMe = () => (
+const AboutMe = ({ openEnquiryPage }) => (
   <Grid>
     <StyledLogoType />
     <StyledArticle>
@@ -40,7 +43,7 @@ const AboutMe = () => (
         comprehension.
       </Paragraph>
       <Paragraph>
-        <ButtonInline>Enquire now</ButtonInline> or{" "}
+        <ButtonInline onClick={openEnquiryPage}>Enquire now</ButtonInline> or{" "}
         <ButtonInline color={COLOR_GREY_LIGHT}>read on</ButtonInline> to learn a
         little more about me.
       </Paragraph>
@@ -49,4 +52,8 @@ const AboutMe = () => (
   </Grid>
 );
 
-export default AboutMe;
+const mapDispatchToProps = dispatch => ({
+  openEnquiryPage: () => dispatch(openEnquiryPage())
+});
+
+export default connect(null, mapDispatchToProps)(AboutMe);

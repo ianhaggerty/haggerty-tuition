@@ -4,6 +4,7 @@ import {
   COLOR_WHITE_PURE,
   COLOR_TRANSPARENT
 } from "../../styles/variables";
+import { fadeTransition } from "../../styles/transitions";
 
 export const EnquiryNavigatorWrapper = styled.nav`
   display: flex;
@@ -13,6 +14,8 @@ export const EnquiryNavigatorWrapper = styled.nav`
   position: absolute;
   bottom: 6.5rem;
   height: 1.5rem;
+
+  ${fadeTransition()}
 `;
 
 export const PageIndicatorWrapper = styled.div`
@@ -62,7 +65,7 @@ export const PageIndicator = styled.div`
     props.active ? COLOR_WHITE_PURE : COLOR_GREY_LIGHT};
 
   ${props => (!props.available ? notAvailableStyles : "")}
-  display: ${props => (!props.visible ? "none" : "block")}
+  display: ${props => (!props.visible ? "none" : "block")};
 
   display: none;
 `;

@@ -11,7 +11,7 @@ import EnquiryForm from "./components/enquiry-form/enquiry-form.component";
 import AboutMe from "./pages/about-me/about-me.component";
 import MyBackground from "./pages/my-background/my-background.component";
 
-const App = props => {
+const App = () => {
   return (
     <React.Fragment>
       <Background />
@@ -19,7 +19,7 @@ const App = props => {
       <Sidebar />
       <EnquiryForm />
 
-      <Window {...props}>
+      <Window>
         <Route exact path="/" render={() => <Redirect to="/about-me" />} />
         <Switch>
           <Route exact path="/about-me" component={AboutMe} />
