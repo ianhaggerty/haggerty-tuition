@@ -6,13 +6,13 @@ import {
   fork,
   cancel,
   call,
-  all
+  all,
 } from "redux-saga/effects";
 
 import { setActive, setInactive } from "./tooltip.actions";
 import TooltipActionTypes from "./tooltip.types";
 
-const TOOL_TIP_DELAY = 1000;
+const TOOL_TIP_DELAY = 100;
 
 export function* setActiveTimer() {
   yield delay(TOOL_TIP_DELAY);
@@ -49,6 +49,6 @@ export function* onTooltipStartInactiveActiveTimer() {
 export function* tooltipSagas() {
   yield all([
     call(onTooltipStartActiveTimer),
-    call(onTooltipStartInactiveActiveTimer)
+    call(onTooltipStartInactiveActiveTimer),
   ]);
 }

@@ -34,7 +34,7 @@ const AboutMe = ({ openEnquiryPage }) => (
     <StyledArticle>
       <Heading>About Me</Heading>
       <Paragraph>
-        With over 9 years of experience, hundreds of students and thousands of
+        With over a decade of experience, hundreds of students and thousands of
         hours clocked, I’m one of Plymouth’s most well known and trusted tutors.
       </Paragraph>
       <Paragraph>
@@ -52,8 +52,8 @@ const AboutMe = ({ openEnquiryPage }) => (
   </Grid>
 );
 
-const mapDispatchToProps = dispatch => ({
-  openEnquiryPage: () => dispatch(openEnquiryPage())
+const mapDispatchToProps = (dispatch) => ({
+  openEnquiryPage: () => dispatch(openEnquiryPage()),
 });
 
 export default connect(null, mapDispatchToProps)(AboutMe);

@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { math } from "polished";
 
-import { SIDEBAR_WIDTH_CLOSED, COLOR_WHITE_PURE } from "../../styles/variables";
+import {
+  SIDEBAR_TRANSITION,
+  SIDEBAR_WIDTH_CLOSED,
+  COLOR_WHITE_PURE,
+} from "../../styles/variables";
 
 export const Wrap = styled.div`
   width: ${SIDEBAR_WIDTH_CLOSED};
@@ -27,7 +31,7 @@ export const Line = styled.div`
   left: calc(${SIDEBAR_WIDTH_CLOSED} / 2 - ${lineLength} / 2);
   top: calc(${SIDEBAR_WIDTH_CLOSED} / 2 - ${lineWidth} / 2);
 
-  transition: 0.5s ease;
+  transition: ${SIDEBAR_TRANSITION};
 
   ${Wrap}.close & {
     &:first-child {
