@@ -1,9 +1,9 @@
 import React from "react";
 
 import { Circle, Img } from "./avatar.styles";
-import selfy from "../../assets/photos/compressed/avatar.jpg";
+import selfy from "../../assets/photos/avatar_2.jpeg";
 
-const Avatar = props => (
+const Avatar = (props) => (
   <Circle {...props}>
     <Img src={selfy} alt="Avatar" />
   </Circle>

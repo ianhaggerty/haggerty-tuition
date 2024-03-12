@@ -12,7 +12,7 @@ import {
   EnquiryFormHeaderLine,
   EnquiryFormParagraph,
   EnquiryFormHighlight,
-  EnquiryPageWrap
+  EnquiryPageWrap,
 } from "./enquiry-page.styles";
 
 const EnquiryPagePricing = ({ nextPage }) => (
@@ -34,23 +34,23 @@ const EnquiryPagePricing = ({ nextPage }) => (
           </tr>
           <tr>
             <th>Mathematics</th>
-            <td>£30</td>
-            <td>£30</td>
-            <td>£30</td>
-            <td>£30</td>
+            <td>£40</td>
+            <td>£40</td>
+            <td>£40</td>
+            <td>£40</td>
           </tr>
           <tr>
             <th>Physics</th>
-            <td>£30</td>
-            <td>£30</td>
-            <td>£30</td>
-            <td>£30</td>
+            <td>£40</td>
+            <td>£40</td>
+            <td>£40</td>
+            <td>£40</td>
           </tr>
           <tr>
             <th>Chemistry</th>
-            <td>£25</td>
-            <td>£25</td>
-            <td>£25</td>
+            <td>£35</td>
+            <td>£35</td>
+            <td>£35</td>
             <td>N/A</td>
           </tr>
           <tr>
@@ -73,8 +73,8 @@ const EnquiryPagePricing = ({ nextPage }) => (
   </EnquiryPageWrap>
 );
 
-const mapDispatchToProps = dispatch => ({
-  nextPage: () => dispatch(nextEnquiryPage())
+const mapDispatchToProps = (dispatch) => ({
+  nextPage: () => dispatch(nextEnquiryPage()),
 });
 
 export default connect(
